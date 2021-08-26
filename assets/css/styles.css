@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald|Lato:400');
+
+/* --------------------------------- global */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    font-family: Lato;
+    color: #857E61;
+    background-color: #DBDAEA;
+    padding-bottom: 70px;
+    max-width: 100%;
+}
+
+h1 {
+    font-family: Oswald;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #857E61;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h2,
+h3,
+p {
+    font-family: Lato;
+    letter-spacing: 4px;
+}
+
+
+
+/* --------------------------------- nav */
+
+.navbar {
+    background-color: #DDC3D0;
+}
+
+.nav-link {
+    font-size: 110%;
+    color: #857E61;
+}
+
+#logo {
+    padding-left: 20px;
+    font-size: 120%;
+}
+
+.navbar-nav {
+    font-size: 110%;
+    letter-spacing: 4px;
+}
+
+.nav-item {
+    margin-right: 30px;
+}
+
+.navbar a {
+    color: #857E61;
+}
+
+
+/* --------------------------------- header */
+
+#hero-text {
+    font-weight: bolder;
+    text-shadow: 3px 3px #000;
+}
+
+#hero.outer {
+    height: 350px;
+    width: 100%;
+}
+
+#header-top {
+    height: auto;
+    display: inline-block;
+    margin: 5px;
+}
+
+hr {
+    width: 90%;
+    margin: 5px auto;
+    border: 1px solid #fff;
+}
+
+#header-bottom {
+    background-color: #DBDAEA;
+    width: 100%;
+    padding: 20px
+}
+
+#welcome {
+    display: flex;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    height: 100%;
+}
+
+
+#left-about {
+    padding-top: 20px;
+    float: left;
+    
+    display: flex;
+    align-items: center;
+}
+
+#right-about {
+    padding-top: 20px;
+    float: right;
+    text-align: center;
+}
+
+.left-about-heading {
+    width: 100%;
+    line-height: 20px;
+    clear: both;
+    text-align: center;
+}
+
+.right-about-heading {
+    width: 100%;
+    float: left;
+    line-height: 20px;
+    clear: both;
+    text-align: center;
+}
+
+/* --------------------------------- footer */
+footer {
+    background-color: #DDC3D0;
+    color: #857E61;
+    text-align: center;
+    min-height: 50px;
+    width: 100%;
+    padding: 10px;
+}
+
+.social-media {
+    text-align: center;
+}
+
+.social-media li {
+    display: inline;
+}
+
+.social-media i {
+    font-size: 160%;
+    margin-top: 10px;
+    padding-left: 2%;
+    color: #B7A196;
+}
+
+
+/* --------------------------------- map */
+
+#map {
+    height: 400px;
+    width: 100%;
+}

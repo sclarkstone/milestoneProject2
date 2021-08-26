@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homepage | Staycation</title>
+  <title>Map | Staycation</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -19,7 +19,7 @@
   <header>
     <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg fixed-top">
-      <h1><a class="navbar-brand" id="logo" href="index.html">Staycation</a></h1>
+        <h1><a class="navbar-brand" id="logo" href="index.html">Staycation</a></h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
           aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -40,36 +40,20 @@
     </nav>
 
   </header>
-  <section id="hero-outer">
-    
-      <div class="col-lg-12" id="welcome">
-        <h1 id="hero-text">A tool to help you find your next staycation</h1>
-      
-    </div>
-  </section>
+  
   <section class="container" id="header-bottom">
+    <h1>Select a city to find out more about it</h1>
     <div class="row">
       <div class="col-lg-7" id="left-about">
-        <div class="left-about-heading">
-          <h3>Need some help finding a location for your next holiday?</h3>
-          <hr id="header-line">
-          <p>With restrictions on travel abroad, why not avoid the hassels of airports and stay in the UK for your vacation - staycation!</p>
-          <div id="autocomplete" class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search cities" aria-label="search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">Search</button>
-            </div> 
-        </div>
-        <p>Or search on a map</p>
-        <p>Or let us pick a random location for you!</p>
+  
+        <div id="map">
         </div>
       </div>
       <div class="col-lg-5" id="right-about">
-        <div id="circle-container">
-        <h3>Details</h3>
-          <div id="circle-bg">
+        <h1>City information</h1>
+          <div id="city">
           </div>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -77,9 +61,51 @@
   <footer class="container-fluid fixed-bottom">
   
   </footer>
+  <script>
+    /* new map */
+    function initMap(){
+var options = {
+zoom: 5,
+center: {
+  lat: 55.3781,
+  lng: -3.4360}
+}
+var map = new google.maps.Map(document.getElementById('map'), options);
+/* city markers */
+addMarker({coords:{lat: 53.9600, lng: -1.0873}, city:'York'});
+addMarker({coords:{lat: 52.4862, lng: -1.8904}, city:'Birmingham'});
 
+function addMarker(props){
+  var marker = new google.maps.Marker({
+      position:props.coords,
+      map:map
+    });
+    
+    marker.addListener('click', function(){
+      document.getElementById('city').innerHTML = props.city;
+    })
+}
+
+/* new marker */
+/*
+var marker = new google.maps.Marker({
+      position:{lat: 53.9600, lng: -1.0873},
+      map:map
+    });
+
+    var infoWindow = new google.maps.InfoWindow({
+      content:'York'
+    });
+    marker.addListener('click', function(){
+      document.getElementById('city').innerHTML = infoWindow;
+      console.log(infoWindow);
+    })
+    */
+}
+  
+  </script>
   <script async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj3cBD3ykDJA2MSaD9QPPKxGq6fcY720E&libraries=places">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj3cBD3ykDJA2MSaD9QPPKxGq6fcY720E&libraries=places&callback=initMap">
 /* auto complete search */
 new google.maps.places.Autocomplete(document.getElementById('autocomplete'),{
   type: ['cities'],
