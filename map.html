@@ -53,7 +53,8 @@
         <h1>City information</h1>
           <div id="city">
           </div>
-        
+          <div id="cityDetail">
+          </div>
       </div>
     </div>
   </section>
@@ -61,6 +62,8 @@
   <footer class="container-fluid fixed-bottom">
   
   </footer>
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj3cBD3ykDJA2MSaD9QPPKxGq6fcY720E&libraries=places&callback=initMap"></script>
   <script>
     /* new map */
     function initMap(){
@@ -74,7 +77,62 @@ var map = new google.maps.Map(document.getElementById('map'), options);
 /* city markers */
 addMarker({coords:{lat: 53.9600, lng: -1.0873}, city:'York'});
 addMarker({coords:{lat: 52.4862, lng: -1.8904}, city:'Birmingham'});
+addMarker({coords:{lat:		52.192	, lng:	-2.22	}, city:'Worcester'});
+addMarker({coords:{lat:		51.0632	, lng:	-1.308	}, city:'Winchester'});
+addMarker({coords:{lat:		53.68	, lng:	-1.49	}, city:'Wakefield'});
+addMarker({coords:{lat:		50.26	, lng:	-5.051	}, city:'Truro'});
+addMarker({coords:{lat:		53.38333	, lng:	-1.46667	}, city:'Sheffield'});
+addMarker({coords:{lat:		52.95	, lng:	-1.15	}, city:'Nottingham'});
+addMarker({coords:{lat:		54.96667	, lng:	-1.6	}, city:'Newcastle'});
+addMarker({coords:{lat:		52.63333	, lng:	-1.13333	}, city:'Leicester'});
+addMarker({coords:{lat:		54.047	, lng:	-2.801	}, city:'Lancaster'});
+addMarker({coords:{lat:		52.0565	, lng:	-2.716	}, city:'Hereford'});
+addMarker({coords:{lat:		51.86445	, lng:	-2.24444	}, city:'Gloucester'});
+addMarker({coords:{lat:		55.86092	, lng:	-4.25143	}, city:'Glasgow'});
+addMarker({coords:{lat:		50.71667	, lng:	-3.53333	}, city:'Exeter'});
+addMarker({coords:{lat:		52.40805	, lng:	-1.51056	}, city:'Coventry'});
+addMarker({coords:{lat:		51.28	, lng:	1.08	}, city:'Canterbury'});
+addMarker({coords:{lat:		52.20528	, lng:	0.119167	}, city:'Cambridge'});
+addMarker({coords:{lat:		53.8	, lng:	-1.75	}, city:'Bradford'});
+addMarker({coords:{lat:		51.38	, lng:	-2.36	}, city:'Bath'});
+addMarker({coords:{lat:		52.57392	, lng:	-0.25083	}, city:'Peterborough'});
+addMarker({coords:{lat:		51.48158	, lng:	-3.17909	}, city:'Cardiff'});
+addMarker({coords:{lat:		50.76804	, lng:	0.290472	}, city:'Eastbourne'});
+addMarker({coords:{lat:		51.75202	, lng:	-1.25768	}, city:'Oxford'});
+addMarker({coords:{lat:		51.50987	, lng:	-0.11809	}, city:'London'});
+addMarker({coords:{lat:		51.44188	, lng:	0.370759	}, city:'Gravesend'});
+addMarker({coords:{lat:		52.24048	, lng:	-0.90266	}, city:'Northampton'});
+addMarker({coords:{lat:		52.37088	, lng:	-1.26503	}, city:'Rugby'});
+addMarker({coords:{lat:		51.77294	, lng:	0.10231	}, city:'Harlow'});
+addMarker({coords:{lat:		57.14965	, lng:	-2.09908	}, city:'Aberdeen'});
+addMarker({coords:{lat:		51.62144	, lng:	-3.94365	}, city:'Swansea'});
+addMarker({coords:{lat:		53.23505	, lng:	-1.42163	}, city:'Chesterfield'});
+addMarker({coords:{lat:		53.48396	, lng:	-2.24464	}, city:'Manchester'});
+addMarker({coords:{lat:		51.45451	, lng:	-2.58791	}, city:'Bristol'});
+addMarker({coords:{lat:		52.59137	, lng:	-2.11075	}, city:'Wolverhampton'});
+addMarker({coords:{lat:		53.76576	, lng:	-2.69234	}, city:'Preston'});
+addMarker({coords:{lat:		50.85426	, lng:	0.573453	}, city:'Hastings'});
+addMarker({coords:{lat:		52.13644	, lng:	-0.46074	}, city:'Bedford'});
+addMarker({coords:{lat:		51.57238	, lng:	0.470009	}, city:'Basildon'});
+addMarker({coords:{lat:		51.45806	, lng:	-2.11607	}, city:'Chippenham'});
+addMarker({coords:{lat:		51.0814	, lng:	1.169456	}, city:'Folkestone'});
+addMarker({coords:{lat:		55.95325	, lng:	-3.18827	}, city:'Edinburgh'});
+addMarker({coords:{lat:		50.9097	, lng:	-1.40435	}, city:'Southampton'});
+addMarker({coords:{lat:		54.60787	, lng:	-5.92644	}, city:'Belfast'});
+addMarker({coords:{lat:		50.82502	, lng:	-0.38384	}, city:'Worthing'});
+addMarker({coords:{lat:		53.80128	, lng:	-1.54857	}, city:'Leeds'});
+addMarker({coords:{lat:		54.32851	, lng:	-2.74387	}, city:'Kendal'});
+addMarker({coords:{lat:		53.76775	, lng:	-0.33583	}, city:'Hull'});
+addMarker({coords:{lat:		50.37629	, lng:	-4.14384	}, city:'Plymouth'});
+addMarker({coords:{lat:		57.47777	, lng:	-4.22472	}, city:'Inverness'});
 
+
+
+
+
+
+
+/* new marker */
 function addMarker(props){
   var marker = new google.maps.Marker({
       position:props.coords,
@@ -82,50 +140,43 @@ function addMarker(props){
     });
     
     marker.addListener('click', function(){
-      document.getElementById('city').innerHTML = props.city;
+      /* document.getElementById('city').innerHTML = props.city; */
+/* city details */
+
+    var placesService = new google.maps.places.PlacesService(document.getElementById('cityDetail')); // i.e. <div id="map"></div>
+
+    var request = {
+        query: props.city,
+        fields: ['formatted_address'],
+    };
+   
+    placesService.findPlaceFromQuery(request, callback);
+    function callback(results, status){
+            if(status == google.maps.places.PlacesServiceStatus.OK){
+                    for (var i = 0; i < results.length; i++) {
+                             console.log(results[i].formatted_address);
+                            document.getElementById('cityDetail').innerHTML = results[i].formatted_address;
+                    }
+            }
+    };
+
+
+
+
+ 
+
+
+
+
+
+
     })
 }
 
-/* new marker */
-/*
-var marker = new google.maps.Marker({
-      position:{lat: 53.9600, lng: -1.0873},
-      map:map
-    });
-
-    var infoWindow = new google.maps.InfoWindow({
-      content:'York'
-    });
-    marker.addListener('click', function(){
-      document.getElementById('city').innerHTML = infoWindow;
-      console.log(infoWindow);
-    })
-    */
 }
   
   </script>
-  <script async
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj3cBD3ykDJA2MSaD9QPPKxGq6fcY720E&libraries=places&callback=initMap">
-/* auto complete search */
-new google.maps.places.Autocomplete(document.getElementById('autocomplete'),{
-  type: ['cities'],
-  componentRestrictions: {country: 'uk'}
-});
 
-google.maps.event.addListener(ac, 'place_changed', function(){
-  var place = ac.getPlace();
-  console.log(place.formatted_address);
-  console.log(place.geomtry.location);
-});
-
-/* place search */
-var service = new google.maps.places.PlaceServices(map);
-var request = {
-  location: new google.maps.LatLng(-33.8736510, 151.20688960),
-
-};
-service.search(request.callback);
-</script> 
 </body>
 
 </html>

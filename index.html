@@ -55,7 +55,7 @@
           <hr id="header-line">
           <p>With restrictions on travel abroad, why not avoid the hassels of airports and stay in the UK for your vacation - staycation!</p>
           <div id="autocomplete" class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search cities" aria-label="search" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" id="citySearch" placeholder="Search cities" aria-label="search" aria-describedby="basic-addon2">
             <div class="input-group-append">
               <button class="btn btn-outline-secondary" type="button">Search</button>
             </div> 
@@ -78,27 +78,13 @@
   
   </footer>
 
-  <script async
+  <script type="text/javascript"
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj3cBD3ykDJA2MSaD9QPPKxGq6fcY720E&libraries=places">
 /* auto complete search */
-new google.maps.places.Autocomplete(document.getElementById('autocomplete'),{
-  type: ['cities'],
-  componentRestrictions: {country: 'uk'}
-});
-
-google.maps.event.addListener(ac, 'place_changed', function(){
-  var place = ac.getPlace();
-  console.log(place.formatted_address);
-  console.log(place.geomtry.location);
-});
-
-/* place search */
-var service = new google.maps.places.PlaceServices(map);
-var request = {
-  location: new google.maps.LatLng(-33.8736510, 151.20688960),
-
-};
-service.search(request.callback);
+function initMap() {
+    var input = document.getElementById('citySearch');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+}
 </script> 
 </body>
 
