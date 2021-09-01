@@ -174,7 +174,7 @@ After the second review with my mentor some recommendations for improvements wer
 
 ### Bugs
 
-* The bootstrap toggler menu was not expanding on mobile view. No errors were being given in the console. 
+* The bootstrap toggler menu was not expanding on mobile view. No errors were being given in the console. I fixed this by comparing my code to my previous milestone project and realised that i had missed the CDN link for the bootstrap js file after the fotter on my pages. Once added the menu then functioned as expected.
 
 ## Desirable features
 This site for the purpose of this milestone project is a Minimum Viable Product (MVP) and contains essential features that allow it to function. Possible deseriable features for future development include;
