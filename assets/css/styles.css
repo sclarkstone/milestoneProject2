@@ -9,8 +9,8 @@
 
 body {
     font-family: Lato;
-    color: #857E61;
-    background-color: #f4f5b7;
+    color: #000;
+    background-color: #c1f7f0;
     padding-bottom: 70px;
     max-width: 100%;
 }
@@ -19,7 +19,7 @@ h1 {
     font-family: Oswald;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #857E61;
+    color: #fff;
     text-align: center;
 }
 
@@ -40,7 +40,7 @@ p {
 
 
 .navbar {
-    background-color: #557a95;
+    background-color: #007065;
 }
 
 .nav-link {
@@ -70,12 +70,12 @@ p {
 
 #hero-image {
     width: auto;
-    height: 300px;
+    height: 200px;
     background: url("../../assets/images/staycation.png") no-repeat;
 }
-@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+@media only screen and (min-device-width: 1024px) {
     #hero-image {
-        height: 600px;
+        height: 450px;
     }
 }
 #hero.outer {
@@ -92,11 +92,11 @@ p {
 hr {
     width: 90%;
     margin: 5px auto;
-    border: 1px solid #fff;
+    border: 1px solid #000;
 }
 
 #header-bottom {
-    background-color: #f4f5b7;
+    background-color: #c1f7f0;
     width: 100%;
     padding: 10px
 }
@@ -130,12 +130,19 @@ hr {
     clear: both;
     text-align: center;
 }
-
-
+#circle-container {
+   
+    padding: 0px;
+    border-style: solid;
+    border-color: #000;
+    border-width: 1px;
+ 
+    margin: 0 auto;
+}
 /* --------------------------------- footer */
 footer {
-    background-color: #8ad5f5;
-    color: #857E61;
+    background-color: #009f93;
+    color: #fff;
     text-align: center;
     min-height: 50px;
     width: 100%;
