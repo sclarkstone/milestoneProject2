@@ -43,7 +43,7 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 * Navigation bar
 
-    * Featured on all three pages, the full responsive bar includes Logo (links to homepage), home page, gallery and contact page and is identical in each page to allow for easy navigation.
+    * Featured on both pages, the full responsive bar includes Logo (links to homepage), home page and map page and is identical in each page to allow for easy navigation.
     * This section will allow the user to easily navigate between pages without having to revert back to the previous page via the browsers back button.
     * The navigation bar uses a collapsed 'hamburger' style for the link on mobile devices and smaller screen sizes. 
 
@@ -52,9 +52,7 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 * Header top (home page main image)
 
-    * The home page main image is a photograph made up of dogs so that users can immediatly visualise the context of the site.
-    * The image has an overlay with text that describes the exact purpose of the site
-    * the image is repeated horizontally so that on larger screens it gives the illusion of more dogs. 
+    * The home page main image is a photograph of a typical UK beach which immediatly gives the context of the site.
 
 ![Large screen header top](assets/images/headerTopLargeScreen.png)
 ![Mobile screen header top](assets/images/headerTopMobileScreen.png)
@@ -75,20 +73,14 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 ![Footer](assets/images/footer.png)
 
-### Gallery page
+### Map page
 
-* The gallery section is where users can see dogs submitted form other users. Each dog shows a photo with a brief profile consisting of name, age and location. They utilise the responsive card layout of bootstrap with a 4 column view on larger screens down to a single column on a mobile view. 
+* The map page is where users can see dogs submitted form other users. Each dog shows a photo with a brief profile consisting of name, age and location. They utilise the responsive card layout of bootstrap with a 4 column view on larger screens down to a single column on a mobile view. 
 
 ![Large screen gallery page](assets/images/galleryLargeScreen.png)
 ![Medium screen gallery page](assets/images/galleryMediumScreen.png)
 ![Mobile screen gallery page](assets/images/galleryMobileScreen.png)
 
-### Contact page
-
-* The contact page gives a responsive form which has media query in the custom style sheet to control the max width on larger screens. The form utilises the bootstrap form control styles and button. it uses required fields so ensure all relevant data is collected. The form is not functional in that it does not post the data on submit, it is for static purposes only in the project. 
-
-![Large screen contact page](assets/images/contactLargeScreen.png)
-![Mobile screen contact page](assets/images/contactMobileScreen.png)
 
 ## Testing
 
@@ -116,7 +108,7 @@ Nav bar|responsive navbar with varying screen sizes| Nav bar is full width with 
 links|internal link to remain in current window and external links to open in new tab| Social media images in footer all open associated sites in a new tab. 'Send details' button opens internal link in same window to contact page.|Pass
 Header bottom|responsive layout| text and circular image side by side on desktop and tablet screen sizes. Circular image below text on mobile screen sizes.|Pass 
 
-#### Gallery
+#### Map
 
 Test | Expected Outcome | Actual outcome|status
 -----|------------------|----------------|--------
@@ -124,14 +116,6 @@ Images|All images appear, sized correctly with alt tags|All card images of indiv
 Nav bar|responsive navbar with varying screen sizes| Nav bar is full width with visable logo text and page links on desktop and tablet screen. On mobile screen sizes it is full width with a collapsed 'hamburger' toggle hiding the page links until pressed.|Pass 
 links|internal link to remain in current window and external links to open in new tab| Social media images in footer all open associated sites in a new tab. 'Enter' button opens internal link in same window to contact page.|Pass
 Cards|responsive columns|columns of 4 cards on desktop and tablet screens and 1 column on mobile screens |Pass
-
-#### Contact
-
-Test | Expected Outcome | Actual outcome|status
------|------------------|----------------|--------
-Nav bar|responsive navbar with varying screen sizes| Nav bar is full width with visable logo text and page links on desktop and tablet screen. On mobile screen sizes it is full width with a collapsed 'hamburger' toggle hiding the page links until pressed.|Pass 
-links|internal link to remain in current window and external links to open in new tab| Social media images in footer all open associated sites in a new tab. 'Send details' button open internal link in same window.|Pass
-Form|responsive width|Full width on mobile screen and 60% width on larger desktop screens |Pass
 
 
 ### Validator testing
@@ -172,64 +156,31 @@ After the first review with my mentor some recommendations for improvements were
 ![Before recomendations mock up screen shots](assets/images/ScreenMockUps.png)
 
 * Homepage
-    * TOPDOGS logo to mirror the padding-left as what the last nav bar item has padding-right so it is semetrical.
-    * Remove the span tags on both background images that were failing to give the images an alt tag. Alt tags are not needed on background images.
-    * Remove unused css styles max and min height on #header-bottom.
-    * Add margin-top on the Button to give some space between it and the text.
-    * The title tage should be directly below the meta tags and it should be reflective of each page rather then the generic title on each. 
-    * Match the height of the footer with the header by adding padding to give a more semetrical apperance. 
-    * Add align-items: center to the header bottom left about text to align it vertically centrally with the image in right about.
-    * Increase the size of the image in right-about so that it fills the space better.
-    * Remove the #welcome background colour as the text does not stand out enough. Instead use display-flex, align-items: center and background color: rgb(0, 0, 0, 0.4). Along with increasing the font weight, changing the h3 to a h1 and adding a text shadow.
-    * Added ipad portrait media query for height of hero image - increase to 600px.
+    
 
 
-* Gallery
-    * Add some padding to the gallery-section to give some space on the page, the objective here is to make sure the page does not look over crowded. This padding would need a media query as the mobile screen would need less padding then a desktop/tablet screen size.
-    * The title tage should be directly below the meta tags and it should be reflective of each page rather then the generic title on each. 
-    * Match the height of the footer with the header by adding padding to give a more semetrical apperance. 
+* Map
+  
 
-
-* Contact
-    * Add some padding to the contact-section to give some space on the page, the objective here is to make sure the page does not look over crowded. This padding would need a media query as the mobile screen would need less padding then a desktop/tablet screen size.
-    * align the header centrally for a more semetrical apperance
-    * The title tage should be directly below the meta tags and it should be reflective of each page rather then the generic title on each. 
-    * Match the height of the footer with the header by adding padding to give a more semetrical apperance. 
 
 ### Second mentor review
 After the second review with my mentor some recommendations for improvements were made. I carried out these recommendations, they are detailed below.
 
 * Homepage
-    * The circle-bg image looked too large on a mobile screen but was filling the screen fine on a table and desktop screen size. So a meda query was needed to reduce the size of the image on  mobile screen size only.
-    * reduce the padding between the social media icons on the footer.
-    * add slight light grey hover to button to match the nav bar item hover
+    
 
-* Gallery
-    * Add more cards to ensure the page content was adequete, it currently looks too sparse on a desktop screen.
-    * add slight light grey hover to button to match the nav bar item hover
-
-
-* Conatact
-    * Add the same background and border as seen on the gallery page to the contact form to be consistent. 
-    * add slight light grey hover to button to match the nav bar item hover
-
+* Map
+   
 
 ### Bugs
 
-* font awesome was not loading images and was giving an error of 'Failed to load resource: the server responded with a status of 404'. On further investigation i found that i was using the CSS link (link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet") with a non existant pathway, rather then the hosted CDN link. I was able to correct this issue by taking out the incorrect CSS link and replaing it with the CDN link.
-
-* After publishing the site to github pages none of the images loaded and chrome developer tools gave an error of 'Failed to load resource: the server responded with a status of 404 ()'
-
-* After publishing the site to github pages chrome developer tools showed an error of 'Error with Permissions-Policy header: Unrecognized feature: 'interest-cohort'.'
-
-* After publishing the site to github pages on the developer tools an error was present. 'Failed to load resource: /favicon.ico:1 the server responded with a status of 404 ()'. After reading about the error on [GitHub comminity](https://github.community/t/favicon-with-github-pages/10242) i found the issue to be that a favicon needed to placed in the header and that the linked image needed to be of a size 32px x 32px. I then resized and saved one of my images and saved in the images folder called favicon and added the link to the head file of each page. I re run the validator and the error was resolved. 
+* The bootstrap toggler menu was not expanding on mobile view. No errors were being given in the console. 
 
 ## Desirable features
 This site for the purpose of this milestone project is a Minimum Viable Product (MVP) and contains essential features that allow it to function. Possible deseriable features for future development include;
 
 * Notifications - users can sign up to receive noticifications of content updates. This would utilise the users preferred contact method. 
 * user profiles - a log in area for users to maintain profiles including preferred contact mehtod and notification frequency.
-* Voting - users would be able to vote for an annual winner from the monthly TOPDOGs on the site. 
 
 These development ideas would require the static site to utilise a backend database to store and call upon user information. 
 
@@ -255,7 +206,6 @@ The live link can be found here - [site link](https://sclarkstone.github.io/mile
     * nabar
     * grid layout with rows and columns
     * form controls
-    * gallery cards
     
 * [Code institute](https://learn.codeinstitute.net/) course material. Specially the 'Love Running' tutorial gave me the inspiration and guidance for the layout of this site.
 
@@ -269,4 +219,4 @@ The live link can be found here - [site link](https://sclarkstone.github.io/mile
 
 ### Media
 
-* The photos of the dogs used throughout the site are of my own dog (Groot) and dogs known to me from who all go to [Andys woodland walks](https://www.facebook.com/andyswoodlandwalks/) where my dog attends. Permission from the Owners and Andrew was granted before use. 
+* The photo of the beach was taken by me in Whitby Aug 2021. 

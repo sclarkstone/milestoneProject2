@@ -71,8 +71,7 @@ p {
 #hero-image {
     width: auto;
     height: 300px;
-  
-    opacity: 80%;
+    background: url("../../assets/images/staycation.png") no-repeat;
 }
 @media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
     #hero-image {
