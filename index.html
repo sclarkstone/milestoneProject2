@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage | Staycation</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     type="text/css" />
   <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
@@ -17,9 +18,23 @@
 
 <body>
   <header>
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <h5 class="text-white h4">Collapsed content</h5>
+        <span class="text-muted">Toggleable via the navbar brand.</span>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
     <!-- Nav bar -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <h1><a class="navbar-brand" id="logo" href="index.html">Staycation</a></h1>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <h1><a class="navbar-brand" id="logo" href="index.html">TopDogs</a></h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar"
           aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -30,22 +45,20 @@
               <a class="nav-link active" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="map.html">Map</a>
+              <a class="nav-link" href="gallery.html">Gallery</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">?</a>
+              <a class="nav-link" href="contact.html">Contact</a>
             </li>
           </ul>
         </div>
+      </div>
     </nav>
 
   </header>
   <section id="hero-outer">
-    
-      <div class="col-lg-12" id="welcome">
-        <h1 id="hero-text">A tool to help you find your next staycation</h1>
-      
-    </div>
+    <div id="hero-image">
+      </div>
   </section>
   <section class="container" id="header-bottom">
     <div class="row">
@@ -53,21 +66,18 @@
         <div class="left-about-heading">
           <h3>Need some help finding a location for your next holiday?</h3>
           <hr id="header-line">
-          <p>With restrictions on travel abroad, why not avoid the hassels of airports and stay in the UK for your vacation - staycation!</p>
-          <div id="autocomplete" class="input-group mb-3">
-            <input type="text" class="form-control" id="citySearch" placeholder="Search cities" aria-label="search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button">Search</button>
-            </div> 
+          <p>Avoid travel restrictions and hassel of airports and stay in the UK for your vacation - staycation!</p>
+          <p>Let us choose a random location for you OR search our <a href="map.html">map</a>.</p>
+          <div id="random" class="col-lg-7">
+            <button type="button" id ="randomBtn" class="btn btn-success">Choose my destination!</button>
         </div>
-        <p>Or search on a map</p>
-        <p>Or let us pick a random location for you!</p>
         </div>
       </div>
       <div class="col-lg-5" id="right-about">
         <div id="circle-container">
-        <h3>Details</h3>
+        <p>Your staycation recommendation: </p>
           <div id="circle-bg">
+            Click the button to find out!
           </div>
         </div>
       </div>
@@ -77,15 +87,36 @@
   <footer class="container-fluid fixed-bottom">
   
   </footer>
+  <script>
+    const destin = ["York",
+"Birmingham",
+"Worcester",
+"Nottingham",
+"Newcastle",
+"Leicester",
+"Lancaster",
+"Exeter",
+"Coventry",
+"Canterbury",
+"Cambridge",
+"Bath",
+"Oxford",
+"London",
+"Northampton",
+"Manchester",
+"Bristol",
+"Bedford",
+"Southampton",
+"Leeds",
+"Plymouth"];
+  document.getElementById("randomBtn").addEventListener("click", function() {
+    
 
-  <script type="text/javascript"
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj3cBD3ykDJA2MSaD9QPPKxGq6fcY720E&libraries=places">
-/* auto complete search */
-function initMap() {
-    var input = document.getElementById('citySearch');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-}
-</script> 
+    let randomValue = destin[Math.floor(Math.random() * destin.length)];
+    document.getElementById("circle-bg").innerHTML = "<h3>" + randomValue + "</h3";
+
+  });
+  </script>
 </body>
 
 </html>

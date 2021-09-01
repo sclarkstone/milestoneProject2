@@ -10,7 +10,7 @@
 body {
     font-family: Lato;
     color: #857E61;
-    background-color: #DBDAEA;
+    background-color: #f4f5b7;
     padding-bottom: 70px;
     max-width: 100%;
 }
@@ -38,13 +38,14 @@ p {
 
 /* --------------------------------- nav */
 
+
 .navbar {
-    background-color: #DDC3D0;
+    background-color: #557a95;
 }
 
 .nav-link {
     font-size: 110%;
-    color: #857E61;
+    color: #fff;
 }
 
 #logo {
@@ -62,24 +63,29 @@ p {
 }
 
 .navbar a {
-    color: #857E61;
+    color: #fff;
 }
-
 
 /* --------------------------------- header */
 
-#hero-text {
-    font-weight: bolder;
-    text-shadow: 3px 3px #000;
+#hero-image {
+    width: auto;
+    height: 300px;
+  
+    opacity: 80%;
 }
-
+@media only screen and (min-device-width: 481px) and (max-device-width: 1024px) and (orientation:portrait) {
+    #hero-image {
+        height: 600px;
+    }
+}
 #hero.outer {
-    height: 350px;
+    height: 300px;
     width: 100%;
 }
 
 #header-top {
-    height: auto;
+    height: 50px;
     display: inline-block;
     margin: 5px;
 }
@@ -91,22 +97,14 @@ hr {
 }
 
 #header-bottom {
-    background-color: #DBDAEA;
+    background-color: #f4f5b7;
     width: 100%;
-    padding: 20px
-}
-
-#welcome {
-    display: flex;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    justify-content: center;
-    height: 100%;
+    padding: 10px
 }
 
 
 #left-about {
-    padding-top: 20px;
+    padding-top: 10px;
     float: left;
     
     display: flex;
@@ -134,9 +132,10 @@ hr {
     text-align: center;
 }
 
+
 /* --------------------------------- footer */
 footer {
-    background-color: #DDC3D0;
+    background-color: #8ad5f5;
     color: #857E61;
     text-align: center;
     min-height: 50px;
