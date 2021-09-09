@@ -7,28 +7,27 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 ## User experience design
 
 ### Strategy
-* Defining the goals - after speaking with friends and family about thier current needs and things that may be missing from their lives, i soon established a commom theme. During these difficult times through out lockdowns and a global pandemic it was noticable to the majority of people i spoke to that there was a sever lack of positive news. 
-* what is the idea? From this research i narrowed down my idea to having a site that was based on joy and positivity. I followed up with the same focus group and found that dogs came out as the common theme when asked to say what brings them joy and positivity.
-* who is the target audience? From this i came up with a target audience of dog lovers or people that need a smile or simply a break from the current negative tone within the main stream media. 
-* why should it be created? Offering something that could potentially make someone smile or to improve wellbeing or at the very ;ease, a distraction to the negativity in the news has the potentical to benefit user.
+* Defining the goals - From both national news and after speaking with friends and family about thier current needs and things that may be missing from their lives, i soon established a commom theme. Since the last Covid-19 lockdown and with travel restrictions abraod still in place, along with the additional costing of PCR testing on top of holidays abroad it was relatable that people in the UK were now choosing to holiday within the UK. The idea of staycationing has become hugley popular this year within the UK. 
+* what is the idea? From this research i narrowed down my idea to having a site that could aid with choosing a location to holiday within the UK. I followed up with the same focus group and found that many people were un aware of all of the amazing locations within the UK but were willing to travel across the UK to find them.
+* who is the target audience? From this i came up with a target audience of all people in the UK that were looking for a staycation location.. 
+* why should it be created? Offering something that could potentially offer inspiration of a location to holiday within the UK could hugely benefit the user.
 
 ### Scope
-* features and functions - gallery of images of dogs looking happy, ready to spread the joy.
+* features and functions - several different way to seach for a location, including a random generator for those with no restrictiong criteria.
 * content requirements - simple but effective. 
 
 #### User stories
 * Objective - what does the user want to accomplish? 
-    * To be able to view content that brings them joy.
-    * A place guraneeted to be void of negativity.
+    * To be able to see potential locations across the UK to holiday.
 * Functional - what does the user need to do to accomplish the objective? whats involved?
     * Simply visit the site. No effort involved. Minimal clicks to get to content. 
     * No sign in or form filling if user chooses not to.
 * Non-functional - what contraints does the site have to perform in?
-    * It is a static site limited to HTML and CSS so functionality will be basic. 
+    * It is limited to HTML, CSS and JavaScript so functionality will be basic. 
 
 ### Structure
 * how will content be organised and presented - site map
-    * 3 page design - homepage, gallery and contact page
+    * 2 page design - homepage and map page
 
 ### Skeleton
 ![Mock up wireframe](assets/images/Milestone1wireframeMockup.png)
@@ -59,23 +58,23 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 * Header bottom
 
-    * The header bottom provides details on how a user can get involved with the site with a button directing them to the contact page.
-    * Another image of a dog provides further context of what the site is about. The circular image is responsive and will appear smaller on mobile screen sizes then it does on tablet and desktop screen sizes.
-    * The header bottom is responsive to screen size and will adjust accordingly by having the circular image side by side with the text on a larger screen size. On a smaller screen size the image will appear below the text.
+    * The header bottom provides details on how a user can get involved with the site with a link directing them to the map page and a button to randomly generate a location to staycation.
+    * The header bottom is responsive to screen size and will adjust accordingly by having the location output side by side with the text on a larger screen size. On a smaller screen size the location output will appear below the text.
 
 ![Large screen header bottom](assets/images/headerBottomLargeScreen.png)
 ![Mobile screen header bottom](assets/images/headerBottomMobileScreen.png)
 
 * Footer
 
-    * The footer section is repeated across all 3 pages for consistancy so the user can become comfortable with the layout no matter which page they are on.
+    * The footer section is repeated across all pages for consistancy so the user can become comfortable with the layout no matter which page they are on.
     * The footer contains links to social media accounts that open in new windows so that they can easily go back to the page they were on.
 
 ![Footer](assets/images/footer.png)
 
 ### Map page
 
-* The map page is where users can see dogs submitted form other users. Each dog shows a photo with a brief profile consisting of name, age and location. They utilise the responsive card layout of bootstrap with a 4 column view on larger screens down to a single column on a mobile view. 
+* The map page is where users can select a location from the markers on the map. This would be of benefit of the user already has a rough idea of area they wish to vist but would like to know specific locations within the area.
+* The map page is responsive to screen size and will adjust accordingly by having the location output side by side with the map on a larger screen size. On a smaller screen size the location output will appear below the map. 
 
 ![Large screen gallery page](assets/images/galleryLargeScreen.png)
 ![Medium screen gallery page](assets/images/galleryMediumScreen.png)
@@ -93,6 +92,8 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 ![Chrome Lighthouse audit results](assets/images/LighthouseAudits.png)
 
 * Chrome Lighthouse audit (Chrome -> dev tolls -> Lighthouse) was run to for performance, accessibility, SEO and best practices.
+
+* Jshint
 
 ### User Acceptance Testing
 
@@ -151,15 +152,16 @@ Cards|responsive columns|columns of 4 cards on desktop and tablet screens and 1 
     * No errors were found when passing through the offical [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsclarkstone.github.io%2FmilestoneProject1%2Fassets%2Fcss%2Fstyles.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) for my custom style.css. however, 17 errors were found in the bootstrap cdn. 
 
 ### First mentor review
-After the first review with my mentor some recommendations for improvements were made. I carried out these recommendations, they are detailed below. I Have also included a mockup screen shot image of beofre the mentor recommendations were made to give some context as to why the recomendations were made and to show the improvements that were made by implementing them.
+After the first review with my mentor some recommendations for improvements were made, they are detailed below. I Have also included a mockup screen shot image of before the mentor recommendations were made to give some context as to why the recomendations were made and to show the improvements that were made by implementing them.
 
 ![Before recomendations mock up screen shots](assets/images/ScreenMockUps.png)
 
 * Homepage
-    
+   * Need significantly more information about the randomly selected city. To achieve this, the layout will need to be ameded to make more room for the city information box. The hero image will need to be reduced in height on all devices screen sizes and on larger screen sizes the left column will need to be wider and the right column size reduced. Suggestions for more information are weather (using the open weather map api), AirBnB link, trip advisor link, bus and trains schedules. Advice was to ensure there is a balance of both travel and activities about the location.  
 
 
 * Map
+    * Need significantly more information about the randomly selected city.Suggestions for more information are weather (using the open weather map api), AirBnB link, trip advisor link, bus and trains schedules. Advice was to ensure there is a balance of both travel and activities about the location. 
   
 
 
