@@ -69,12 +69,12 @@ p {
 
 #hero-image {
     width: auto;
-    height: 200px;
+    height: 150px;
     background: url("../../assets/images/staycation.png") no-repeat;
 }
 @media only screen and (min-device-width: 1024px) {
     #hero-image {
-        height: 450px;
+        height: 250px;
     }
 }
 #hero.outer {
