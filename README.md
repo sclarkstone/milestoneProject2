@@ -219,6 +219,8 @@ The live link can be found here - [site link](https://sclarkstone.github.io/mile
 
 * [material.io]('https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=557a95&secondary.color=33691E']) was used to check accessibility of text colours on background colours. Also used to find complemetary colours. This is where i decided on my 2 shades of blue with white text. As the result was that black was not legible on these shades of blue. Credit to my mentor Akshat for showing me this resource. 
 
+* OpenWeatherMap API. Credit to the provdided walkthroughs at [Fetch the Weather with OpenWeatherMap API and JavaScript]('https://bithacker.dev/fetch-weather-openweathermap-api-javascript') and [openweathermap]('https://openweathermap.org/current') for how to display the API JSON as desired.  
+
 ### Media
 
 * The photo of the beach was taken by me in Whitby Aug 2021. 

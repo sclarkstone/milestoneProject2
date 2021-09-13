@@ -58,10 +58,14 @@
         </div>
       </div>
       <div class="col-lg-8" id="right-about">
-        <div id="circle-container">
+        <div id="city-container">
         <p>Your staycation recommendation: </p>
-          <div id="circle-bg">
+          <div id="city-name">
             Click the button to find out!
+          </div>
+          <div id="city-weather">
+            <div id="description"></div>
+            <div id="temp"></div>
           </div>
         </div>
       </div>
@@ -74,7 +78,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
   </script>
+ 
   <script>
+
+
     const destin = ["York",
 "Birmingham",
 "Worcester",
@@ -98,11 +105,36 @@
 "Plymouth"];
   document.getElementById("randomBtn").addEventListener("click", function() {
     
-
+// randomly pick a city and display
     let randomValue = destin[Math.floor(Math.random() * destin.length)];
-    document.getElementById("circle-bg").innerHTML = "<h3>" + randomValue + "</h3";
+    document.getElementById("city-name").innerHTML = "<h3>" + randomValue + "</h3";
 
+
+ //get weather details for city from OpenweatherAPI and display    
+  var key = 'd92ede264e126d1fde57b9996e67937f';
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + randomValue+ ',GB&appid=' + key)  
+  .then(function(resp) { return resp.json() }) // Convert data to json
+  .then(function(data) {
+   
+    drawWeather(data); // Call drawWeather
+
+  })
+  .catch(function() {
+    // catch any errors
   });
+
+
+  function drawWeather( d ) {
+    //convert Kelvins temp to celcius
+	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+	
+	document.getElementById('description').innerHTML = d.weather[0].description;
+	document.getElementById('temp').innerHTML = celcius + '&deg;';
+}
+
+
+
+});
   </script>
 </body>
 
