@@ -52,13 +52,13 @@
         </div>
       </div>
       <div class="col-lg-5" id="right-about">
+        <div id="cityDetail"></div>
         <h2 id="cityName">Click the map to view city details</h2>
-        
-          <div id="cityDetail">
-            
-          </div>
-          <span id="cityLink"></span>
-        
+        <div id="error" class="city"></div>
+        <div id="temp" class="city"></div>
+        <div id="events" class="city"></div>
+        <div id="hotel" class="city"></div>
+        <div id="travel" class="city"></div>
       </div>
     </div>
   </section>
@@ -75,10 +75,10 @@
     /* new map */
     function initMap(){
 var options = {
-zoom: 5,
+zoom: 6,
 center: {
-  lat: 55.3781,
-  lng: -3.4360}
+  lat: 52.95,
+  lng: -1.15}
 }
 var map = new google.maps.Map(document.getElementById('map'), options);
 /* city markers */
@@ -134,12 +134,38 @@ function addMarker(props){
                     for (var i = 0; i < results.length; i++) {
                       console.log(results[i].name);
                             document.getElementById('cityName').innerHTML = results[i].formatted_address;
-                            document.getElementById('cityDetail').innerHTML = 'For the top activities, up-coming events and best restaurants in the area visit';
-                            document.getElementById("cityLink").innerHTML = '<a href="https://www.visitengland.com/things-to-do/' + results[i].name + '"target="_blank">VisitEngland</a>';
-              
-                    }
+                           //produce custom city link to visitEngland - events
+      document.getElementById("events").innerHTML = 'Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' + results[i].name + '"target="_blank">VisitEngland</a>';
+//produce custom city link to airb and b - hotels
+document.getElementById("hotel").innerHTML = 'Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' + results[i].name + '-united-kingdom/stays "target="_blank">Airbnb</a>';
+//add travel link - travel
+document.getElementById("travel").innerHTML = 'To plan your journey visit: <a href="https://www.nationalrail.co.uk/" "target="_blank">National Rail</a>';
+//get weather details for city from OpenweatherAPI and display    
+var key = 'd92ede264e126d1fde57b9996e67937f';
+  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + results[i].name+ ',GB&appid=' + key)  
+  .then(function(resp) { return resp.json() }) // Convert data to json
+  .then(function(data) {
+   
+    drawWeather(data); // Call drawWeather
+
+  })
+  .catch(function() {
+    document.getElementById('error').innerHTML = 'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
+  });
+
+
+  function drawWeather( d ) {
+    //convert Kelvins temp to celcius
+	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+	
+	document.getElementById('temp').innerHTML = 'Weather: ' + celcius + '&deg; with ' + d.weather[0].description;
+}                  
+
+
+
+}
             }else{
-              document.getElementById('city').innerHTML = 'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
+              document.getElementById('error').innerHTML = 'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
 
             }
     };
