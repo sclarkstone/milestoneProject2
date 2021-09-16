@@ -119,7 +119,7 @@ document.getElementById("travel").innerHTML = 'To plan your journey visit: <a hr
  //get weather details for city from OpenweatherAPI and display    
   var key = 'd92ede264e126d1fde57b9996e67937f';
   fetch('https://api.openweathermap.org/data/2.5/weather?q=' + randomValue+ ',GB&appid=' + key)  
-  .then(function(resp) { return resp.json() }) // Convert data to json
+  .then(function(resp) { return resp.json(); }) // Convert data to json
   .then(function(data) {
    
     drawWeather(data); // Call drawWeather
