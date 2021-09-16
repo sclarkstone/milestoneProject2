@@ -2,14 +2,14 @@
 
 ![Mock up screen shots](assets/images/ScreenMockUpsFinal.png)
 
-This site is targeted at people in the UK that are unable to or avoiding travel abroad and looking to remain in the UK to holiday. It offers different methods for users to find a location within the UK to holiday that they would have otherwise not considered as a holiday destination.  
+This site is targeted at people in the UK that are unable to or avoiding travel abroad and looking to remain in the UK to holiday. It offers different methods for users to find a location within the UK to holiday that they would have otherwise perhaps not considered as a holiday destination.  
 
 ## User experience design
 
 ### Strategy
-* Defining the goals - From both national news and after speaking with friends and family about thier current needs and things that may be missing from their lives, i soon established a commom theme. Since the last Covid-19 lockdown and with travel restrictions abraod still in place, along with the additional costing of PCR testing on top of holidays abroad it was relatable that people in the UK were now choosing to holiday within the UK. The idea of staycationing has become hugley popular this year within the UK. 
+* Defining the goals - From both national news and after speaking with friends and family about thier current needs and things that may be missing from their lives, i soon established a commom theme. Since the last Covid-19 lockdown and with travel restrictions abroad still in place, along with the additional costing of PCR testing on top of holidays abroad it was relatable that people in the UK were now choosing to holiday within the UK. The idea of staycationing has become hugley popular this year within the UK. 
 * what is the idea? From this research i narrowed down my idea to having a site that could aid with choosing a location to holiday within the UK. I followed up with the same focus group and found that many people were un aware of all of the amazing locations within the UK but were willing to travel across the UK to find them.
-* who is the target audience? From this i came up with a target audience of all people in the UK that were looking for a staycation location.. 
+* who is the target audience? From this i came up with a target audience of all people in the UK that were looking for a staycation location.
 * why should it be created? Offering something that could potentially offer inspiration of a location to holiday within the UK could hugely benefit the user.
 
 ### Scope
@@ -30,7 +30,7 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
     * 2 page design - homepage and map page
 
 ### Skeleton
-![Mock up wireframe](assets/images/Milestone1wireframeMockup.png)
+![Mock up wireframe](assets/images/Milestone2wireframeMockup.png)
 
 
 ### Surface
@@ -196,7 +196,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 * Click save
 * The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found here - [site link](https://sclarkstone.github.io/milestoneProject1/)
+The live link can be found here - [site link](https://sclarkstone.github.io/milestoneProject2/)
 
 ## Credits
 
