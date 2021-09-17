@@ -70,7 +70,7 @@ p {
     height: 150px;
     background: url("../../assets/images/staycation.png") no-repeat;
 }
-@media only screen and (min-device-width: 1024px) {
+@media only screen and (min-width: 1024px) {
     #hero-image {
         height: 250px;
     }

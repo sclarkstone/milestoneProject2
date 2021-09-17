@@ -125,28 +125,21 @@ Cards|responsive columns|columns of 4 cards on desktop and tablet screens and 1 
 
     * 'Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.' - As the hero-outer has no header text to be associated with it to fix this warning i turned the hero-outer section into a div.
 
-
-
-
-
     * After correcting the above errors and re running the w3c validator the following message came 'Document checking completed. No errors or warnings to show'.
 
-* HTML using W3C validator - map.html 
+* HTML using [W3C validator]('https://validator.w3.org/nu/?doc=https%3A%2F%2Fsclarkstone.github.io%2FmilestoneProject2%2Fmap.html') - map.html 
 
     * Error: Element dv not allowed as child of element section in this context. (Suppressing further errors from this subtree.)' - after reviewing the code i found that on line 44 of map.html i had put <dv></dv> which should have been div tags. After correcting this i then re run the validator and the issue was resolved.
 
     * 'Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.' - As the header-top and header bottom sections had no header text to be associated with it, to fix this warning i turned the sections into divs.
 
-
-
-
     * After correcting the above errors and re running the w3c validator the following message came 'Document checking completed. No errors or warnings to show'.
 
 * CSS
 
-    * 'Deprecated media feature “min-device-width”' - ???????
+    * 'Deprecated media feature “min-device-width”' - amended media query in styles.css to 'min-width' as advised by the jigsaw error feedback.
 
-    * No errors were found when passing through the offical [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsclarkstone.github.io%2FmilestoneProject1%2Fassets%2Fcss%2Fstyles.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) for my custom style.css. however, 17 errors were found in the bootstrap cdn. 
+    * After correcting the above error and re running the jigsaw validator no errors were found when passing through the offical [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fsclarkstone.github.io%2FmilestoneProject2%2Fassets%2Fcss%2Fstyles.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) for my custom style.css. however, 17 errors were found in the bootstrap cdn. 
 
 * JavaScript using JSHint 
     * 'Line 50 - Missing semicolon.'
