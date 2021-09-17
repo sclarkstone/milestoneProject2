@@ -123,7 +123,7 @@ Cards|responsive columns|columns of 4 cards on desktop and tablet screens and 1 
 
 * HTML using [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fsclarkstone.github.io%2FmilestoneProject2%2Findex.html) - index.html
 
-    * 'Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.' - ????????????
+    * 'Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.' - As the hero-outer has no header text to be associated with it to fix this warning i turned the hero-outer section into a div.
 
 
 
@@ -135,7 +135,7 @@ Cards|responsive columns|columns of 4 cards on desktop and tablet screens and 1 
 
     * Error: Element dv not allowed as child of element section in this context. (Suppressing further errors from this subtree.)' - after reviewing the code i found that on line 44 of map.html i had put <dv></dv> which should have been div tags. After correcting this i then re run the validator and the issue was resolved.
 
-    * 'Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.' - ????????????
+    * 'Warning: Section lacks heading. Consider using h2-h6 elements to add identifying headings to all sections.' - As the header-top and header bottom sections had no header text to be associated with it, to fix this warning i turned the sections into divs.
 
 
 
