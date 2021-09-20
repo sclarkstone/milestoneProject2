@@ -78,7 +78,7 @@ zoom: 6,
 center: {
   lat: 52.95,
   lng: -1.15}
-}
+};
 var map = new google.maps.Map(document.getElementById('map'), options);
 /* city markers */
 addMarker({coords:{lat: 53.9600, lng: -1.0873}, city:'York'});
@@ -153,37 +153,23 @@ var key = 'd92ede264e126d1fde57b9996e67937f';
   });
 
 
-  function drawWeather( d ) {
-    //convert Kelvins temp to celcius
-	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
-	
-	document.getElementById('temp').innerHTML = 'Weather: ' + celcius + '&deg; with ' + d.weather[0].description;
-}                  
-
-
-
+                 
 }
             }else{
               document.getElementById('error').innerHTML = 'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
 
             }
-    };
-
-
-
-
- 
-
-
-
-
-
-
-    })
+    }
+    });
 }
 
 }
-  
+function drawWeather( d ) {
+    //convert Kelvins temp to celcius
+	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
+	
+	document.getElementById('temp').innerHTML = 'Weather: ' + celcius + '&deg; with ' + d.weather[0].description;
+}    
   </script>
 
 </body>

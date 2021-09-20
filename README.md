@@ -145,7 +145,10 @@ Cards|responsive columns|columns of 4 cards on desktop and tablet screens and 1 
     * 'Missing semicolon.' after reviewing the code, the missing semicolon was found to be on line 122 (where the open weathermap api data is being converted to JSON) After correcting this i then re run the validator and the issue was resolved.
 
 * JavaScript using JSHint - map.html
-    * 'Missing semicolon.' after reviewing the code, the missing semicolon was found to be on line 81 (at the end of the initMap function) After correcting this i then re run the validator and the issue was resolved.
+    * 'Missing semicolon.' after reviewing the code, the missing semicolon was found to be at the end of the initMap function. After correcting this i then re run the validator and the issue was resolved.
+    * 'Unnecessary semicolon.' after reviewing the code, the unnecessary semicolon was found to be at the end of the callback function. After correcting this i then re run the validator and the issue was resolved.
+    * 'Missing semicolon.' after reviewing the code, the missing semicolon was found to be at the end of the addListener function. After correcting this i then re run the validator and the issue was resolved.
+    * 'Function declarations should not be placed in blocks. Use a function expression or move the statement to the top of the outer function.' - after reviewing the code i could see that the drawWeather fnction was inside the addMarker function when it did not need to be. i moved the drawWeather function outside and called it in the addMarker function where the response was needed. After correcting this i then re run the validator and the issue was resolved.
 
 
 ### First mentor review
@@ -179,7 +182,7 @@ After the second review with my mentor some recommendations for improvements wer
 This site for the purpose of this milestone project is a Minimum Viable Product (MVP) and contains essential features that allow it to function. Possible deseriable features for future development include;
 
 * Notifications - users can sign up to receive noticifications of content updates. This would utilise the users preferred contact method. 
-* user profiles - a log in area for users to maintain profiles including preferred contact mehtod and notification frequency.
+* user profiles - a log in area for users to maintain profiles which could store locations they have already visited and recommend personalised simular locations.
 
 These development ideas would require the static site to utilise a backend database to store and call upon user information. 
 
