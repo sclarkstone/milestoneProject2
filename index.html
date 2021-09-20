@@ -46,18 +46,46 @@
     </div>
   <section class="container" id="header-bottom">
     <div class="row">
-      <div class="col-lg-4" id="left-about">
+      <div class="col-lg-5" id="left-about">
         <div class="left-about-heading">
           <h4>Need some help finding a location for your next holiday?</h4>
           <hr id="header-line">
           <p>Avoid travel restrictions and hassel of airports and stay in the UK for your vacation - staycation!</p>
           <p>Let us choose a random location for you OR search our <a href="map.html">map</a>.</p>
-          <div id="random" class="col-lg-12">
+          
+          <form>
+            <div class="mb-3">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="cityCriteria" id="cityCriteria1">
+                <label class="form-check-label" for="cityCriteria1">
+                  I want to build sand-castles on the beach
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="cityCriteria" id="cityCriteria2">
+                <label class="form-check-label" for="cityCriteria2">
+                  I want exciting nighlife
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="cityCriteria" id="cityCriteria3">
+                <label class="form-check-label" for="cityCriteria3">
+                  I want to relax in the middle of nowhere
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="cityCriteria" id="cityCriteria4" checked>
+                <label class="form-check-label" for="cityCriteria4">
+                  Ill take anything!
+                </label>
+              </div>
+            </div>
             <button type="button" id ="randomBtn" class="btn btn-success">Choose my destination!</button>
-        </div>
+          </form>
+        
         </div>
       </div>
-      <div class="col-lg-8" id="right-about">
+      <div class="col-lg-7" id="right-about">
         <div id="city-container">
         <p>Your staycation recommendation: </p>
           <div id="city-name">
@@ -82,32 +110,64 @@
  
   <script>
 
+var arraylocation = [
+    {name: 'York',type: 'rural'},
+    {name: 'Birmingham',type: 'urban'},
+    {name: 'Worcester',type: 'rural'},
+    {name: 'Nottingham',type: 'urban'},
+    {name: 'Newcastle',type: 'urban'},
+    {name: 'Leicester',type: 'urban'},
+    {name: 'Lancaster',type: 'urban'},
+    {name: 'Exeter',type: 'urban'},
+    {name: 'Coventry',type: 'rural'},
+    {name: 'Canterbury',type: 'rural'},
+    {name: 'Cambridge',type: 'urban'},
+    {name: 'Bath',type: 'urban'},
+    {name: 'Oxford',type: 'urban'},
+    {name: 'London',type: 'urban'},
+    {name: 'Northampton',type: 'urban'},
+    {name: 'Manchester',type: 'urban'},
+    {name: 'Bristol',type: 'urban'},
+    {name: 'Bedford',type: 'rural'},
+    {name: 'Southampton',type: 'coastal'},
+    {name: 'Leeds',type: 'coastal'},
+    {name: 'Plymouth',type: 'coastal'},
 
-    const destin = ["York",
-"Birmingham",
-"Worcester",
-"Nottingham",
-"Newcastle",
-"Leicester",
-"Lancaster",
-"Exeter",
-"Coventry",
-"Canterbury",
-"Cambridge",
-"Bath",
-"Oxford",
-"London",
-"Northampton",
-"Manchester",
-"Bristol",
-"Bedford",
-"Southampton",
-"Leeds",
-"Plymouth"];
+];
+
+function extractValue(arr, prop) {
+
+// get all the cities ready to randomly pick one
+let extractedValue = arr.map(item => item[prop]);
+return extractedValue;
+}
+let resultname = extractValue(arraylocation, 'name');
+
+ 
+
   document.getElementById("randomBtn").addEventListener("click", function() {
-    
-// randomly pick a city and display
-    let randomValue = destin[Math.floor(Math.random() * destin.length)];
+//check to see if any user filters were applied
+if(document.getElementById('cityCriteria1').checked) {
+  //filter city array to type is coastal
+  const filteredarray = arraylocation.filter(activity => (activity.type == 'coastal'));
+  resultname = extractValue(filteredarray, 'name');
+
+}else if(document.getElementById('cityCriteria2').checked) {
+//filter city array to type is urban
+const filteredarray = arraylocation.filter(activity => (activity.type == 'urban'));
+resultname = extractValue(filteredarray, 'name');
+
+}else if(document.getElementById('cityCriteria3').checked) {
+//filter city array to type is rural
+const filteredarray = arraylocation.filter(activity => (activity.type == 'rural'));
+resultname = extractValue(filteredarray, 'name');
+
+}else{
+  //no filters
+}
+
+    // randomly pick a city and display
+    let randomValue = resultname[Math.floor(Math.random() * resultname.length)];
     document.getElementById("city-name").innerHTML = "<h3>" + randomValue + "</h3";
 //produce custom city link to visitEngland - events
       document.getElementById("events").innerHTML = 'Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' + randomValue + '"target="_blank">VisitEngland</a>';
