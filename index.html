@@ -176,11 +176,11 @@ resultname = extractValue(filteredarray, 'name');
     let randomValue = resultname[Math.floor(Math.random() * resultname.length)];
     document.getElementById("city-name").innerHTML = "<h3>" + randomValue + "</h3";
 //produce custom city link to visitEngland - events
-      document.getElementById("events").innerHTML = 'Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' + randomValue + '" target="_blank">VisitEngland</a>';
+      document.getElementById("events").innerHTML = '<i class="far fa-calendar-alt"></i> Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' + randomValue + '" target="_blank">VisitEngland</a>';
 //produce custom city link to airb and b - hotels
-document.getElementById("hotel").innerHTML = 'Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' + randomValue + '-united-kingdom/stays" target="_blank">Airbnb</a>';
+document.getElementById("hotel").innerHTML = '<i class="fas fa-hotel"></i> Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' + randomValue + '-united-kingdom/stays" target="_blank">Airbnb</a>';
 //add travel link - travel
-document.getElementById("travel").innerHTML = 'To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
+document.getElementById("travel").innerHTML = '<i class="fas fa-bus"></i> To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
 
  //get weather details for city from OpenweatherAPI and display    
   var key = 'd92ede264e126d1fde57b9996e67937f';
@@ -202,7 +202,7 @@ document.getElementById("travel").innerHTML = 'To plan your journey visit: <a hr
     //convert Kelvins temp to celcius
 	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
 	
-	document.getElementById('temp').innerHTML = 'Weather: ' + celcius + '&deg; with ' + d.weather[0].description;
+	document.getElementById('temp').innerHTML = '<i class="fas fa-temperature-low"></i> ' + celcius + '&deg; with ' + d.weather[0].description;
 }
 
 
