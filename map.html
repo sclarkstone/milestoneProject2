@@ -134,11 +134,11 @@ function addMarker(props){
                       console.log(results[i].name);
                             document.getElementById('cityName').innerHTML = results[i].formatted_address;
                            //produce custom city link to visitEngland - events
-      document.getElementById("events").innerHTML = 'Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' + results[i].name + '"target="_blank">VisitEngland</a>';
+      document.getElementById("events").innerHTML = 'Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' + results[i].name + '" target="_blank">VisitEngland</a>';
 //produce custom city link to airb and b - hotels
-document.getElementById("hotel").innerHTML = 'Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' + results[i].name + '-united-kingdom/stays "target="_blank">Airbnb</a>';
+document.getElementById("hotel").innerHTML = 'Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' + results[i].name + '-united-kingdom/stays" target="_blank">Airbnb</a>';
 //add travel link - travel
-document.getElementById("travel").innerHTML = 'To plan your journey visit: <a href="https://www.nationalrail.co.uk/ "target="_blank">National Rail</a>';
+document.getElementById("travel").innerHTML = 'To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
 //get weather details for city from OpenweatherAPI and display    
 var key = 'd92ede264e126d1fde57b9996e67937f';
   fetch('https://api.openweathermap.org/data/2.5/weather?q=' + results[i].name+ ',GB&appid=' + key)  
