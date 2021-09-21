@@ -103,20 +103,24 @@ The UAT was carried out on desktop, tablet and mobile screen sizes. The UAT was 
 
 Test | Expected Outcome | Actual outcome|status
 -----|------------------|----------------|--------
-Images|All images appear, sized correctly with alt tags|Hero image, circle image and font awesome social media images all loaded correctly| Pass
+Images|All images appear, sized correctly with alt tags|Hero image and font awesome social media images all loaded correctly| Pass
 fonts|fonts use specified google fonts| Oswald and Lanto fonts load|Pass
+API|Local weather|Weather is displayed for the selected city|Pass
 Nav bar|responsive navbar with varying screen sizes| Nav bar is full width with visable logo text and page links on desktop and tablet screen. On mobile screen sizes it is full width with a collapsed 'hamburger' toggle hiding the page links until pressed.|Pass 
-links|internal link to remain in current window and external links to open in new tab| Social media images in footer all open associated sites in a new tab. 'Send details' button opens internal link in same window to contact page.|Pass
-Header bottom|responsive layout| text and circular image side by side on desktop and tablet screen sizes. Circular image below text on mobile screen sizes.|Pass 
+links|internal link to remain in current window and external links to open in new tab| National rail opens associated site in a new tab. 'Map' link opens internal link in same window to map page.|Pass
+Dynamic links|External links to open in new tab with dynamic city name as url parameter| VistEngland and Airbnb open associated sites in a new tab with the correct url parameter.|Pass
+Header bottom|responsive layout| form and city detail text side by side on desktop and tablet screen sizes. City detail text below form on mobile screen sizes.|Pass
+interactivity|user action which provides feedback|'choose my destination' button provides a random city name from array and local weather. If a criteria is selected then the array is filtered by type before a random city name is selected and displayed. |Pass
 
 #### Map
 
 Test | Expected Outcome | Actual outcome|status
 -----|------------------|----------------|--------
-Images|All images appear, sized correctly with alt tags|All card images of individual dogs appear, the correct size with the correct alt tages|Pass
+API|map with markers and local weather|Map loads and is focused in to central UK with markers positioned on the cities from the array list. Weather is displayed for the selected city|Pass
 Nav bar|responsive navbar with varying screen sizes| Nav bar is full width with visable logo text and page links on desktop and tablet screen. On mobile screen sizes it is full width with a collapsed 'hamburger' toggle hiding the page links until pressed.|Pass 
-links|internal link to remain in current window and external links to open in new tab| Social media images in footer all open associated sites in a new tab. 'Enter' button opens internal link in same window to contact page.|Pass
-Cards|responsive columns|columns of 4 cards on desktop and tablet screens and 1 column on mobile screens |Pass
+links|internal link to remain in current window and external links to open in new tab| National rail opens associated site in a new tab. 'Map' link opens internal link in same window to map page.|Pass
+Dynamic links|External links to open in new tab with dynamic city name as url parameter| VistEngland and Airbnb open associated sites in a new tab with the correct url parameter.|Pass
+interactivity|user action which provides feedback|clicking a map marker provides city name and local weather. |Pass
 
 
 ### Validator testing
@@ -181,10 +185,10 @@ After the second review with my mentor some recommendations for improvements wer
 ## Desirable features
 This site for the purpose of this milestone project is a Minimum Viable Product (MVP) and contains essential features that allow it to function. Possible deseriable features for future development include;
 
-* Notifications - users can sign up to receive noticifications of content updates. This would utilise the users preferred contact method. 
-* user profiles - a log in area for users to maintain profiles which could store locations they have already visited and recommend personalised simular locations.
+* User profiles - a log in area for users to maintain profiles which could store locations they have already visited and recommend personalised simular locations.
+* Reviews - allows users to leave reviews of locations and have a star rating for each location. Could also then use this to show destinations by popularity.
 
-These development ideas would require the static site to utilise a backend database to store and call upon user information. 
+These development ideas would require the site to utilise a backend database to store and call upon user information. 
 
 ## Deployment
 
@@ -205,7 +209,7 @@ The live link can be found here - [site link](https://sclarkstone.github.io/mile
 
 * [bootstrap V5](https://getbootstrap.com/docs/5.0/getting-started/introduction/)
 
-    * nabar
+    * navbar
     * grid layout with rows and columns
     * form controls
     
