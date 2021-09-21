@@ -70,11 +70,13 @@ p {
     height: 150px;
     background: url("../../assets/images/staycation.png") no-repeat;
 }
+
 @media only screen and (min-width: 1024px) {
     #hero-image {
         height: 250px;
     }
 }
+
 #hero.outer {
     height: 300px;
     width: 100%;
@@ -102,7 +104,7 @@ hr {
 #left-about {
     padding-top: 10px;
     float: left;
-    
+
     display: flex;
     align-items: center;
 }
@@ -127,8 +129,9 @@ hr {
     clear: both;
     text-align: center;
 }
+
 #city-container {
-   
+
     padding: 0px;
     border-style: solid;
     border-color: #000;

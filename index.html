@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage | Staycation</title>
   <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- font awesome icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
     type="text/css" />
   <link rel="stylesheet" href="assets/css/styles.css" type="text/css" />
@@ -18,8 +19,8 @@
 
 <body>
   <header>
-    
-    <!-- Nav bar --> 
+
+    <!-- Nav bar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <h1><a class="navbar-brand" id="logo" href="index.html">Staycation</a></h1>
@@ -42,8 +43,8 @@
   </header>
   <div id="hero-outer">
     <div id="hero-image">
-      </div>
     </div>
+  </div>
   <section class="container" id="header-bottom">
     <div class="row">
       <div class="col-lg-5" id="left-about">
@@ -52,7 +53,7 @@
           <hr id="header-line">
           <p>Avoid travel restrictions and hassel of airports and stay in the UK for your vacation - staycation!</p>
           <p>Let us choose a random location for you OR search our <a href="map.html">map</a>.</p>
-          
+
           <form>
             <div class="mb-3">
               <div class="form-check">
@@ -80,134 +81,204 @@
                 </label>
               </div>
             </div>
-            <button type="button" id ="randomBtn" class="btn btn-success">Choose my destination!</button>
+            <button type="button" id="randomBtn" class="btn btn-success">Choose my destination!</button>
           </form>
-        
+
         </div>
       </div>
       <div class="col-lg-7" id="right-about">
         <div id="city-container">
-        <p>Your staycation recommendation: </p>
+          <p>Your staycation recommendation: </p>
           <div id="city-name">
             Click the button to find out!
           </div>
-            <div id="error" class="city"></div>
-            <div id="temp" class="city"></div>
-            <div id="events" class="city"></div>
-            <div id="hotel" class="city"></div>
-            <div id="travel" class="city"></div>
+          <div id="error" class="city"></div>
+          <div id="temp" class="city"></div>
+          <div id="events" class="city"></div>
+          <div id="hotel" class="city"></div>
+          <div id="travel" class="city"></div>
         </div>
       </div>
     </div>
   </section>
- 
-    <footer class="container-fluid fixed-bottom">
-      <div class="row">
-        <ul class="social-media">
-          <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
-          <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
-          <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
-        </ul>
-      </div>
-    </footer>
+
+  <footer class="container-fluid fixed-bottom">
+    <div class="row">
+      <ul class="social-media">
+        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+        <li><a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube-square"></i></a></li>
+      </ul>
+    </div>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
   </script>
- 
+
   <script>
+    var arraylocation = [{
+        name: 'York',
+        type: 'rural'
+      },
+      {
+        name: 'Birmingham',
+        type: 'urban'
+      },
+      {
+        name: 'Worcester',
+        type: 'rural'
+      },
+      {
+        name: 'Nottingham',
+        type: 'urban'
+      },
+      {
+        name: 'Newcastle',
+        type: 'urban'
+      },
+      {
+        name: 'Leicester',
+        type: 'urban'
+      },
+      {
+        name: 'Lancaster',
+        type: 'urban'
+      },
+      {
+        name: 'Exeter',
+        type: 'urban'
+      },
+      {
+        name: 'Coventry',
+        type: 'rural'
+      },
+      {
+        name: 'Canterbury',
+        type: 'rural'
+      },
+      {
+        name: 'Cambridge',
+        type: 'urban'
+      },
+      {
+        name: 'Bath',
+        type: 'urban'
+      },
+      {
+        name: 'Oxford',
+        type: 'urban'
+      },
+      {
+        name: 'London',
+        type: 'urban'
+      },
+      {
+        name: 'Northampton',
+        type: 'urban'
+      },
+      {
+        name: 'Manchester',
+        type: 'urban'
+      },
+      {
+        name: 'Bristol',
+        type: 'urban'
+      },
+      {
+        name: 'Bedford',
+        type: 'rural'
+      },
+      {
+        name: 'Southampton',
+        type: 'coastal'
+      },
+      {
+        name: 'Leeds',
+        type: 'coastal'
+      },
+      {
+        name: 'Plymouth',
+        type: 'coastal'
+      },
 
-var arraylocation = [
-    {name: 'York',type: 'rural'},
-    {name: 'Birmingham',type: 'urban'},
-    {name: 'Worcester',type: 'rural'},
-    {name: 'Nottingham',type: 'urban'},
-    {name: 'Newcastle',type: 'urban'},
-    {name: 'Leicester',type: 'urban'},
-    {name: 'Lancaster',type: 'urban'},
-    {name: 'Exeter',type: 'urban'},
-    {name: 'Coventry',type: 'rural'},
-    {name: 'Canterbury',type: 'rural'},
-    {name: 'Cambridge',type: 'urban'},
-    {name: 'Bath',type: 'urban'},
-    {name: 'Oxford',type: 'urban'},
-    {name: 'London',type: 'urban'},
-    {name: 'Northampton',type: 'urban'},
-    {name: 'Manchester',type: 'urban'},
-    {name: 'Bristol',type: 'urban'},
-    {name: 'Bedford',type: 'rural'},
-    {name: 'Southampton',type: 'coastal'},
-    {name: 'Leeds',type: 'coastal'},
-    {name: 'Plymouth',type: 'coastal'},
+    ];
 
-];
+    function extractValue(arr, prop) {
 
-function extractValue(arr, prop) {
-
-// get all the cities ready to randomly pick one
-let extractedValue = arr.map(item => item[prop]);
-return extractedValue;
-}
-let resultname = extractValue(arraylocation, 'name');
-
- 
-
-  document.getElementById("randomBtn").addEventListener("click", function() {
-//check to see if any user filters were applied
-if(document.getElementById('cityCriteria1').checked) {
-  //filter city array to type is coastal
-  const filteredarray = arraylocation.filter(activity => (activity.type == 'coastal'));
-  resultname = extractValue(filteredarray, 'name');
-
-}else if(document.getElementById('cityCriteria2').checked) {
-//filter city array to type is urban
-const filteredarray = arraylocation.filter(activity => (activity.type == 'urban'));
-resultname = extractValue(filteredarray, 'name');
-
-}else if(document.getElementById('cityCriteria3').checked) {
-//filter city array to type is rural
-const filteredarray = arraylocation.filter(activity => (activity.type == 'rural'));
-resultname = extractValue(filteredarray, 'name');
-
-}else{
-  //no filters
-}
-
-    // randomly pick a city and display
-    let randomValue = resultname[Math.floor(Math.random() * resultname.length)];
-    document.getElementById("city-name").innerHTML = "<h3>" + randomValue + "</h3";
-//produce custom city link to visitEngland - events
-      document.getElementById("events").innerHTML = '<i class="far fa-calendar-alt"></i> Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' + randomValue + '" target="_blank">VisitEngland</a>';
-//produce custom city link to airb and b - hotels
-document.getElementById("hotel").innerHTML = '<i class="fas fa-hotel"></i> Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' + randomValue + '-united-kingdom/stays" target="_blank">Airbnb</a>';
-//add travel link - travel
-document.getElementById("travel").innerHTML = '<i class="fas fa-bus"></i> To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
-
- //get weather details for city from OpenweatherAPI and display    
-  var key = 'd92ede264e126d1fde57b9996e67937f';
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + randomValue+ ',GB&appid=' + key)  
-  .then(function(resp) { return resp.json(); }) // Convert data to json
-  .then(function(data) {
-   
-    drawWeather(data); // Call drawWeather
-
-  })
-  .catch(function() {
-    // catch any errors
-    document.getElementById('error').innerHTML = 'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
-
-  });
-
-
-  function drawWeather( d ) {
-    //convert Kelvins temp to celcius
-	var celcius = Math.round(parseFloat(d.main.temp)-273.15);
-	
-	document.getElementById('temp').innerHTML = '<i class="fas fa-temperature-low"></i> ' + celcius + '&deg; with ' + d.weather[0].description;
-}
+      // get all the city names ready to randomly pick one
+      let extractedValue = arr.map(item => item[prop]);
+      return extractedValue;
+    }
+    let resultname = extractValue(arraylocation, 'name');
 
 
 
-});
+    document.getElementById("randomBtn").addEventListener("click", function () {
+      //check to see if any user filters were applied
+      if (document.getElementById('cityCriteria1').checked) {
+        //filter city array to type is coastal
+        const filteredarray = arraylocation.filter(activity => (activity.type == 'coastal'));
+        resultname = extractValue(filteredarray, 'name');
+
+      } else if (document.getElementById('cityCriteria2').checked) {
+        //filter city array to type is urban
+        const filteredarray = arraylocation.filter(activity => (activity.type == 'urban'));
+        resultname = extractValue(filteredarray, 'name');
+
+      } else if (document.getElementById('cityCriteria3').checked) {
+        //filter city array to type is rural
+        const filteredarray = arraylocation.filter(activity => (activity.type == 'rural'));
+        resultname = extractValue(filteredarray, 'name');
+
+      } else {
+        //no filters
+      }
+
+      // randomly pick a city and display
+      let randomValue = resultname[Math.floor(Math.random() * resultname.length)];
+      document.getElementById("city-name").innerHTML = "<h3>" + randomValue + "</h3";
+      //produce custom city link to visitEngland - events
+      document.getElementById("events").innerHTML =
+        '<i class="far fa-calendar-alt"></i> Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' +
+        randomValue + '" target="_blank">VisitEngland</a>';
+      //produce custom city link to airb and b - hotels
+      document.getElementById("hotel").innerHTML =
+        '<i class="fas fa-hotel"></i> Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' +
+        randomValue + '-united-kingdom/stays" target="_blank">Airbnb</a>';
+      //add travel link - travel
+      document.getElementById("travel").innerHTML =
+        '<i class="fas fa-bus"></i> To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
+
+      //get weather details for city from OpenweatherAPI and display    
+      var key = 'd92ede264e126d1fde57b9996e67937f';
+      fetch('https://api.openweathermap.org/data/2.5/weather?q=' + randomValue + ',GB&appid=' + key)
+        .then(function (resp) {
+          return resp.json();
+        }) // Convert data to json
+        .then(function (data) {
+
+          drawWeather(data); // Call drawWeather
+
+        })
+        .catch(function () {
+          // catch any errors
+          document.getElementById('error').innerHTML =
+            'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
+
+        });
+
+
+      function drawWeather(d) {
+        //convert Kelvins temp to celcius
+        var celcius = Math.round(parseFloat(d.main.temp) - 273.15);
+
+        document.getElementById('temp').innerHTML = '<i class="fas fa-temperature-low"></i> ' + celcius +
+          '&deg; with ' + d.weather[0].description;
+      }
+
+
+
+    });
   </script>
 </body>
 
