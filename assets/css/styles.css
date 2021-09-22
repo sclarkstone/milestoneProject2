@@ -33,6 +33,10 @@ p {
     letter-spacing: 4px;
 }
 
+main {
+    min-height: calc(100vh - 153px);
+}
+
 /* --------------------------------- nav */
 
 
