@@ -173,12 +173,19 @@ After the first review with my mentor some recommendations for improvements were
 
 ### Second mentor review
 After the second review with my mentor some recommendations for improvements were made. I carried out these recommendations, they are detailed below.
+* General
+    * Seperate out the JavaScript into a seperate file/files and call it in the html files.
+    * split code up into reusable functions so both the index and the map page can utilise them.
+    * put api keys and urls in const at top of file
+    * map markers - put as a loop inside the function
+    * clear the api error on click so it hides it until relevant again.
 
 * Homepage
-    
+    * hero image width too small for larger screen sizes.
+    * Wrap the body of the page and give it a min height rather then use a footer fixed to bottom as it prevents scrolling on mobile devices. 
 
 * Map
-   
+  * utilise the page more on larger screen sizes. use full width map. 
 
 ### Bugs
 
