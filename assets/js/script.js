@@ -1,407 +1,257 @@
-// index page
-
-var arraylocation = [{
-    name: 'York',
-    type: 'rural'
-  },
-  {
-    name: 'Birmingham',
-    type: 'urban'
-  },
-  {
-    name: 'Worcester',
-    type: 'rural'
-  },
-  {
-    name: 'Nottingham',
-    type: 'urban'
-  },
-  {
-    name: 'Newcastle',
-    type: 'urban'
-  },
-  {
-    name: 'Leicester',
-    type: 'urban'
-  },
-  {
-    name: 'Lancaster',
-    type: 'urban'
-  },
-  {
-    name: 'Exeter',
-    type: 'urban'
-  },
-  {
-    name: 'Coventry',
-    type: 'rural'
-  },
-  {
-    name: 'Canterbury',
-    type: 'rural'
-  },
-  {
-    name: 'Cambridge',
-    type: 'urban'
-  },
-  {
-    name: 'Bath',
-    type: 'urban'
-  },
-  {
-    name: 'Oxford',
-    type: 'urban'
-  },
-  {
-    name: 'London',
-    type: 'urban'
-  },
-  {
-    name: 'Northampton',
-    type: 'urban'
-  },
-  {
-    name: 'Manchester',
-    type: 'urban'
-  },
-  {
-    name: 'Bristol',
-    type: 'urban'
-  },
-  {
-    name: 'Bedford',
-    type: 'rural'
-  },
-  {
-    name: 'Southampton',
-    type: 'coastal'
-  },
-  {
-    name: 'Leeds',
-    type: 'coastal'
-  },
-  {
-    name: 'Plymouth',
-    type: 'coastal'
-  },
-
-];
-
-function extractValue(arr, prop) {
-
-  // get all the city names ready to randomly pick one
-  let extractedValue = arr.map(item => item[prop]);
-  return extractedValue;
-}
-let resultname = extractValue(arraylocation, 'name');
-
-
-
-document.getElementById("randomBtn").addEventListener("click", function () {
-  //check to see if any user filters were applied
-  if (document.getElementById('cityCriteria1').checked) {
-    //filter city array to type is coastal
-    const filteredarray = arraylocation.filter(activity => (activity.type == 'coastal'));
-    resultname = extractValue(filteredarray, 'name');
-
-  } else if (document.getElementById('cityCriteria2').checked) {
-    //filter city array to type is urban
-    const filteredarray = arraylocation.filter(activity => (activity.type == 'urban'));
-    resultname = extractValue(filteredarray, 'name');
-
-  } else if (document.getElementById('cityCriteria3').checked) {
-    //filter city array to type is rural
-    const filteredarray = arraylocation.filter(activity => (activity.type == 'rural'));
-    resultname = extractValue(filteredarray, 'name');
-
-  } else {
-    //no filters
-  }
-
-  // randomly pick a city and display
-  let randomValue = resultname[Math.floor(Math.random() * resultname.length)];
-  document.getElementById("city-name").innerHTML = "<h3>" + randomValue + "</h3";
-  //produce custom city link to visitEngland - events
-  document.getElementById("events").innerHTML =
-    '<i class="far fa-calendar-alt"></i> Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' +
-    randomValue + '" target="_blank">VisitEngland</a>';
-  //produce custom city link to airb and b - hotels
-  document.getElementById("hotel").innerHTML =
-    '<i class="fas fa-hotel"></i> Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' +
-    randomValue + '-united-kingdom/stays" target="_blank">Airbnb</a>';
-  //add travel link - travel
-  document.getElementById("travel").innerHTML =
-    '<i class="fas fa-bus"></i> To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
-
-  //get weather details for city from OpenweatherAPI and display    
-  var key = 'd92ede264e126d1fde57b9996e67937f';
-  fetch('https://api.openweathermap.org/data/2.5/weather?q=' + randomValue + ',GB&appid=' + key)
-    .then(function (resp) {
-      return resp.json();
-    }) // Convert data to json
-    .then(function (data) {
-
-      drawWeather(data); // Call drawWeather
-
-    })
-    .catch(function () {
-      // catch any errors
-      document.getElementById('error').innerHTML =
-        'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
-
-    });
-
-
-  function drawWeather(d) {
-    //convert Kelvins temp to celcius
-    var celcius = Math.round(parseFloat(d.main.temp) - 273.15);
-
-    document.getElementById('temp').innerHTML = '<i class="fas fa-temperature-low"></i> ' + celcius +
-      '&deg; with ' + d.weather[0].description;
-  }
-
-
-
-});
-
-// map page
-
- /* new map */
-    function initMap() {
-      var options = {
-        zoom: 6,
-        center: {
+    var locations = [
+      {
+         name: 'York',
+         type: 'rural',
+         coords: {
+          lat: 53.9600,
+        lng: -1.0873
+        }
+      },
+      {
+         name: 'Birmingham',
+         type: 'urban',
+         coords: {
+          lat: 52.4862,
+          lng: -1.8904
+        }
+      },
+      {
+         name: 'Worcester',
+         type: 'rural',
+         coords: {
+          lat: 52.192,
+          lng: -2.22
+        }
+      },
+      {
+         name: 'Nottingham',
+         type: 'urban',
+         coords: {
           lat: 52.95,
           lng: -1.15
         }
-      };
-      var map = new google.maps.Map(document.getElementById('map'), options);
-      /* city markers */
-      addMarker({
-        coords: {
-          lat: 53.9600,
-          lng: -1.0873
-        },
-        city: 'York'
-      });
-      addMarker({
-        coords: {
-          lat: 52.4862,
-          lng: -1.8904
-        },
-        city: 'Birmingham'
-      });
-      addMarker({
-        coords: {
-          lat: 52.192,
-          lng: -2.22
-        },
-        city: 'Worcester'
-      });
-      addMarker({
-        coords: {
-          lat: 52.95,
-          lng: -1.15
-        },
-        city: 'Nottingham'
-      });
-      addMarker({
-        coords: {
+      },
+      {
+         name: 'Newcastle',
+         type: 'urban',
+         coords: {
           lat: 54.96667,
-          lng: -1.6
-        },
-        city: 'Newcastle'
-      });
-      addMarker({
-        coords: {
+        lng: -1.6
+        }
+      },
+      {
+         name: 'Leicester',
+         type: 'urban',
+         coords: {
           lat: 52.63333,
           lng: -1.13333
-        },
-        city: 'Leicester'
-      });
-      addMarker({
-        coords: {
+        }
+      },
+      {
+         name: 'Lancaster',
+         type: 'urban',
+         coords: {
           lat: 54.047,
           lng: -2.801
-        },
-        city: 'Lancaster'
-      });
-      addMarker({
-        coords: {
+        }
+      },
+      {
+         name: 'Exeter',
+         type: 'urban',
+         coords: {
           lat: 50.71667,
           lng: -3.53333
-        },
-        city: 'Exeter'
-      });
-      addMarker({
-        coords: {
+        }
+      },
+      {
+         name: 'Coventry',
+         type: 'rural',
+         coords: {
           lat: 52.40805,
-          lng: -1.51056
-        },
-        city: 'Coventry'
-      });
-      addMarker({
-        coords: {
+        lng: -1.51056
+        }
+      },
+      {
+         name: 'Canterbury',
+         type: 'rural',
+         coords: {
           lat: 51.28,
-          lng: 1.08
-        },
-        city: 'Canterbury'
-      });
-      addMarker({
-        coords: {
+        lng: 1.08
+        }
+      },
+      {
+         name: 'Cambridge',
+         type: 'urban',
+         coords: {
           lat: 52.20528,
-          lng: 0.119167
-        },
-        city: 'Cambridge'
-      });
-      addMarker({
-        coords: {
+        lng: 0.119167
+        }
+      },
+      {
+         name: 'Bath',
+         type: 'urban',
+         coords: {
           lat: 51.38,
-          lng: -2.36
-        },
-        city: 'Bath'
-      });
-      addMarker({
-        coords: {
+        lng: -2.36
+        }
+      },
+      {
+         name: 'Oxford',
+         type: 'urban',
+         coords: {
           lat: 51.75202,
           lng: -1.25768
-        },
-        city: 'Oxford'
-      });
-      addMarker({
-        coords: {
+        }
+      },
+      {
+         name: 'London',
+         type: 'urban',
+         coords: {
           lat: 51.50987,
-          lng: -0.11809
-        },
-        city: 'London'
-      });
-      addMarker({
-        coords: {
+        lng: -0.11809
+        }
+      },
+      {
+         name: 'Northampton',
+         type: 'urban',
+         coords: {
           lat: 52.24048,
-          lng: -0.90266
-        },
-        city: 'Northampton'
-      });
-      addMarker({
-        coords: {
+        lng: -0.90266
+        }
+      },
+      {
+         name: 'Manchester',
+         type: 'urban',
+         coords: {
           lat: 53.48396,
-          lng: -2.24464
-        },
-        city: 'Manchester'
-      });
-      addMarker({
-        coords: {
+        lng: -2.24464
+        }
+      },
+      {
+         name: 'Bristol',
+         type: 'urban',
+         coords: {
           lat: 51.45451,
           lng: -2.58791
-        },
-        city: 'Bristol'
-      });
-      addMarker({
-        coords: {
+        }
+      },
+      {
+         name: 'Bedford',
+         type: 'rural',
+         coords: {
           lat: 52.13644,
           lng: -0.46074
-        },
-        city: 'Bedford'
-      });
-      addMarker({
-        coords: {
+        }
+      },
+      {
+         name: 'Southampton',
+         type: 'coastal',
+         coords: {
           lat: 50.9097,
           lng: -1.40435
-        },
-        city: 'Southampton'
-      });
-      addMarker({
-        coords: {
+        }
+      },
+      {
+         name: 'Leeds',
+         type: 'coastal',
+         coords: {
           lat: 53.80128,
           lng: -1.54857
-        },
-        city: 'Leeds'
-      });
-      addMarker({
-        coords: {
+        }
+      },
+      {
+         name: 'Plymouth',
+         type: 'coastal',
+         coords: {
           lat: 50.37629,
-          lng: -4.14384
-        },
-        city: 'Plymouth'
-      });
-
-
-
-
-
-
-
-      /* new marker */
-      function addMarker(props) {
-        var marker = new google.maps.Marker({
-          position: props.coords,
-          map: map
-        });
-
-        marker.addListener('click', function () {
-          /* document.getElementById('city').innerHTML = props.city; */
-          /* city details */
-
-          var placesService = new google.maps.places.PlacesService(document.getElementById(
-          'cityDetail')); // i.e. <div id="map"></div>
-
-          var request = {
-            query: props.city,
-            fields: ['formatted_address', 'name'],
-          };
-
-          placesService.findPlaceFromQuery(request, callback);
-
-          function callback(results, status) {
-            if (status == google.maps.places.PlacesServiceStatus.OK) {
-              for (var i = 0; i < results.length; i++) {
-                console.log(results[i].name);
-                document.getElementById('cityName').innerHTML = results[i].formatted_address;
-                //produce custom city link to visitEngland - events
-                document.getElementById("events").innerHTML =
-                  '<i class="far fa-calendar-alt"></i> Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/' +
-                  results[i].name + '" target="_blank">VisitEngland</a>';
-                //produce custom city link to airb and b - hotels
-                document.getElementById("hotel").innerHTML =
-                  '<i class="fas fa-hotel"></i> Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/' +
-                  results[i].name + '-united-kingdom/stays" target="_blank">Airbnb</a>';
-                //add travel link - travel
-                document.getElementById("travel").innerHTML =
-                  '<i class="fas fa-bus"></i> To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
-                //get weather details for city from OpenweatherAPI and display    
-                var key = 'd92ede264e126d1fde57b9996e67937f';
-                fetch('https://api.openweathermap.org/data/2.5/weather?q=' + results[i].name + ',GB&appid=' + key)
-                  .then(function (resp) {
-                    return resp.json();
-                  }) // Convert data to json
-                  .then(function (data) {
-
-                    drawWeather(data); // Call drawWeather
-
-                  })
-                  .catch(function () {
-                    document.getElementById('error').innerHTML =
-                      'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
-                  });
-
-
-
-              }
-            } else {
-              document.getElementById('error').innerHTML =
-                'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
-
-            }
-          }
-        });
+        lng: -4.14384
+        }
+      },
+   
+   ];
+   
+   const OPENWEATHER_API_KEY = 'd92ede264e126d1fde57b9996e67937f';
+   const OPENWEATHERMAP_API_URL = `https://api.openweathermap.org/data/2.5/weather`;
+   
+   
+   function mapLocationToCityName(locationList) {
+      return locationList.map(location => location['name']);
+   }
+   
+   function filterLocationsByType(locationList, locationType) {
+      return locationList.filter(location => (location.type === locationType));
+   }
+   
+   let cityNames = mapLocationToCityName(locations);
+   
+   
+   function showCityProps(city) {
+     console.log(city);
+      // Show city name
+      document.getElementById("city-name").innerHTML = `<h3>${city}</h3`;
+      //produce custom city link to visitEngland - events
+      document.getElementById("events").innerHTML =
+         `<i class="far fa-calendar-alt"></i> Activities, up-coming events and best restaurants in the area visit: <a href="https://www.visitengland.com/things-to-do/${city}" target="_blank">VisitEngland</a>`;
+      //produce custom city link to airb and b - hotels
+      document.getElementById("hotel").innerHTML =
+         `<i class="fas fa-hotel"></i> Holiday rentals, cabins, beach houses and unique homes in the area visit: <a href="https://www.airbnb.co.uk/${city}-united-kingdom/stays" target="_blank">Airbnb</a>`;
+      //add travel link - travel
+      document.getElementById("travel").innerHTML =
+         '<i class="fas fa-bus"></i> To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
+   
+   }
+   
+   document.getElementById("randomBtn").addEventListener("click", function () {
+      //check to see if any user filters were applied
+      let locationType = '';
+      if (document.getElementById('cityCriteria1').checked) {
+         //filter city array to type is coastal
+         locationType = 'coastal';
+   
+      } else if (document.getElementById('cityCriteria2').checked) {
+         //filter city array to type is urban
+         locationType = 'urban';
+   
+      } else if (document.getElementById('cityCriteria3').checked) {
+         //filter city array to type is rural
+         locationType = 'rural';
       }
-
-    }
-
-    function drawWeather(d) {
+   
+      if (locationType) {
+         const filteredArray = filterLocationsByType(locations, 'coastal');
+         cityNames = mapLocationToCityName(filteredArray);
+      }
+   
+      // randomly pick a city and display
+      let randomCity = cityNames[Math.floor(Math.random() * cityNames.length)];
+   
+      // Show city props on HTML
+      showCityProps(randomCity);
+   
+      fetchWeatherInfoForCityAndShow(randomCity);
+   });
+   
+   
+   function fetchWeatherInfoForCityAndShow(cityName) {
+      fetch(`${OPENWEATHERMAP_API_URL}?q=${cityName},GB&appid=${OPENWEATHER_API_KEY}`)
+      .then(function (resp) {
+         return resp.json();
+      }) // Convert data to json
+      .then(function (data) {
+   
+         drawWeather(data); // Call drawWeather
+   
+      })
+      .catch(function () {
+         // catch any errors
+         document.getElementById('error').innerHTML =
+         'Sorry, there was an error with your request. There is a limit on the API requests. Please wait and try again later.';
+   
+      });
+   }
+   
+   function drawWeather(d) {
       //convert Kelvins temp to celcius
-      var celcius = Math.round(parseFloat(d.main.temp) - 273.15);
-
-      document.getElementById('temp').innerHTML = '<i class="fas fa-temperature-low"></i> ' + celcius + '&deg; with ' +
-        d.weather[0].description;
-    }
+      var tempInCelsius = Math.round(parseFloat(d.main.temp) - 273.15);
+      document.getElementById('temp').innerHTML = `<i class="fas fa-temperature-low"></i>${tempInCelsius}&deg; with ${d.weather[0].description}`;
+   }
