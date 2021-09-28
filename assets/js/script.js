@@ -186,7 +186,6 @@
    
    
    function showCityProps(city) {
-     console.log(city);
       // Show city name
       document.getElementById("city-name").innerHTML = `<h3>${city}</h3`;
       //produce custom city link to visitEngland - events
@@ -200,7 +199,10 @@
          '<i class="fas fa-bus"></i> To plan your journey visit: <a href="https://www.nationalrail.co.uk/" target="_blank">National Rail</a>';
    
    }
-   
+   //check if event listening is null
+   var el = document.getElementById('randomBtn');
+if(el){
+
    document.getElementById("randomBtn").addEventListener("click", function () {
       //check to see if any user filters were applied
       let locationType = '';
@@ -231,7 +233,7 @@
       fetchWeatherInfoForCityAndShow(randomCity);
    });
    
-   
+}
    function fetchWeatherInfoForCityAndShow(cityName) {
       fetch(`${OPENWEATHERMAP_API_URL}?q=${cityName},GB&appid=${OPENWEATHER_API_KEY}`)
       .then(function (resp) {
