@@ -89,11 +89,11 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 * [Chrome developer tools](https://developer.chrome.com/docs/devtools/) device toggle toolbar was utilised to view the site via emulators of different screen sizes and devices.
 
-![Chrome Lighthouse audit results](assets/images/LighthouseAudits.png)
+![Chrome Lighthouse audit results](assets/images/LighthouseAudit.png)
 
-* Chrome Lighthouse audit (Chrome -> dev tolls -> Lighthouse) was run to for performance, accessibility, SEO and best practices.
+* Chrome Lighthouse audit (Chrome -> dev tolls -> Lighthouse) was run to for performance, accessibility, SEO and best practices. After running the initial audit the SEO category only scored an amber rather then green as the rest of the categories did. The audit advised that the 'Tap targets are not sized appropriately'. 
 
-* JSHint
+* JSHint was used to to detect errors and potential problems in your JavaScript code.
 
 ### User Acceptance Testing
 
