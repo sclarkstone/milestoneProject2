@@ -90,7 +90,15 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 ![Chrome Lighthouse audit results](assets/images/LighthouseAudit.png)
 
-* Chrome Lighthouse audit (Chrome -> dev tools -> Lighthouse) was run to for performance, accessibility, SEO and best practices. After running the initial audit the SEO category only scored an amber rather then green as the rest of the categories did. The audit advised that the 'Tap targets are not sized appropriately'. After apply CSS to increase the margins below the radio buttons this then resolved the issue and re running the audit put all categories into the green. 
+* Chrome Lighthouse audit (Chrome -> dev tools -> Lighthouse) was run to for performance, accessibility, SEO and best practices. After running the initial audit the SEO category only scored an amber rather then green as the rest of the categories did. The audit advised that the 'Tap targets are not sized appropriately'. After appling CSS to increase the margins below the radio buttons this then resolved the issue 
+
+![Chrome Lighthouse audit results second attempt](assets/images/LighthouseAuditSecond.png)
+
+* Chrome Lighthouse audit - second attempt. The audit advised that 'Document does not have a meta description'. After adding in a meta description this then resolved the issue.
+
+![Chrome Lighthouse audit results third attempt](assets/images/LighthouseAuditThird.png)
+
+* Chrome Lighthouse audit - third attempt. After making corrections from attempts the first and second audits and re running the audit on the third attemp all categories were  green. 
 
 * JSHint was used to to detect errors and potential problems in your JavaScript code.
 
