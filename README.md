@@ -52,13 +52,13 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 * Header top (home page main image)
 
     * The home page main image is a photograph of a typical UK beach which immediatly gives the context of the site.
+    * The header top is responsive to screen size and will adjust accordingly.
 
 ![Large screen header top](assets/images/headerTopLargeScreen.png)
-![Mobile screen header top](assets/images/headerTopMobileScreen.png)
 
 * Header bottom
 
-    * The header bottom provides details on how a user can get involved with the site with a link directing them to the map page and a button to randomly generate a location to staycation.
+    * The header bottom provides details on how a user can get involved with the site with a link directing them to the map page and a form with a button to randomly generate a location to a staycation. The form has the last option checked as default which will apply no filtering criteria and utilise then entire locations array to randomly select a location. If option 1 (coastal), 2 (urban) or 3 (rural) are selected then the releveant filtering is applied to the array before a random location is selected.
     * The header bottom is responsive to screen size and will adjust accordingly by having the location output side by side with the text on a larger screen size. On a smaller screen size the location output will appear below the text.
 
 ![Large screen header bottom](assets/images/headerBottomLargeScreen.png)
@@ -76,9 +76,8 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 * The map page is where users can select a location from the markers on the map. This would be of benefit of the user already has a rough idea of area they wish to vist but would like to know specific locations within the area.
 * The map page is responsive to screen size and will adjust accordingly by having the location output side by side with the map on a larger screen size. On a smaller screen size the location output will appear below the map. 
 
-![Large screen gallery page](assets/images/galleryLargeScreen.png)
-![Medium screen gallery page](assets/images/galleryMediumScreen.png)
-![Mobile screen gallery page](assets/images/galleryMobileScreen.png)
+![Large screen map page](assets/images/mapLargeScreen.png)
+![Mobile screen map page](assets/images/mapMobileScreen.png)
 
 
 ## Testing
@@ -91,7 +90,7 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 ![Chrome Lighthouse audit results](assets/images/LighthouseAudit.png)
 
-* Chrome Lighthouse audit (Chrome -> dev tolls -> Lighthouse) was run to for performance, accessibility, SEO and best practices. After running the initial audit the SEO category only scored an amber rather then green as the rest of the categories did. The audit advised that the 'Tap targets are not sized appropriately'. 
+* Chrome Lighthouse audit (Chrome -> dev tools -> Lighthouse) was run to for performance, accessibility, SEO and best practices. After running the initial audit the SEO category only scored an amber rather then green as the rest of the categories did. The audit advised that the 'Tap targets are not sized appropriately'. After apply CSS to increase the margins below the radio buttons this then resolved the issue and re running the audit put all categories into the green. 
 
 * JSHint was used to to detect errors and potential problems in your JavaScript code.
 
