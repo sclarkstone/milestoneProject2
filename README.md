@@ -86,17 +86,19 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 * [Chrome developer tools](https://developer.chrome.com/docs/devtools/) on the browser was used to see any errors on the pages.
 
+    * Got the error 'Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')'. Added in check to see if randomBtn was null before the event listener. This corrected the issue. 
+
 * [Chrome developer tools](https://developer.chrome.com/docs/devtools/) device toggle toolbar was utilised to view the site via emulators of different screen sizes and devices.
 
 ![Chrome Lighthouse audit results](assets/images/LighthouseAudit.png)
 
 * Chrome Lighthouse audit (Chrome -> dev tools -> Lighthouse) was run to for performance, accessibility, SEO and best practices. After running the initial audit the SEO category only scored an amber rather then green as the rest of the categories did. The audit advised that the 'Tap targets are not sized appropriately'. After appling CSS to increase the margins below the radio buttons this then resolved the issue 
 
-![Chrome Lighthouse audit results second attempt](assets/images/LighthouseAuditSecond.png)
+![Chrome Lighthouse audit results second attempt](assets/images/LighthouseAuditSecondAttempt.png)
 
 * Chrome Lighthouse audit - second attempt. The audit advised that 'Document does not have a meta description'. After adding in a meta description this then resolved the issue.
 
-![Chrome Lighthouse audit results third attempt](assets/images/LighthouseAuditThird.png)
+![Chrome Lighthouse audit results third attempt](assets/images/LighthouseAuditThirdAttempt.png)
 
 * Chrome Lighthouse audit - third attempt. After making corrections from attempts the first and second audits and re running the audit on the third attemp all categories were  green. 
 
@@ -186,6 +188,7 @@ After the second review with my mentor some recommendations for improvements wer
     * put api keys and urls in const at top of file
     * map markers - put as a loop inside the function
     * clear the api error on click so it hides it until relevant again.
+    * clear any error messages displayed on successful event listner click and city selection.
 
 * Homepage
     * hero image width too small for larger screen sizes.
@@ -208,13 +211,42 @@ These development ideas would require the site to utilise a backend database to 
 
 ## Deployment
 
-The site was deployed to GitHub pages. The steps to deploy are as follows:
+* API - google maps and places. The steps to set up API key are as follows:
+    
+    * Set up a google [cloud account]('https://console.cloud.google.com/)
+    * Select projects and New project
+    * With the project name selected select Billing from the side menu
+    * Select manage billing account and enter card details to associate a billijg acocunt with the project
+    * Select APIs & services from the side menu then select Credentials
+    * Select Create Credentials with API key
+    * Once the API key is created select edit under the API keys section, actions column
+    * Under Application restrictions select HTTP referrers (web sites)
+    * Under Website restrictions add both development and live GitHub URLs (live GitHub URL will need to be added after the GitPod deployment stage)
+    * Under API restrictions select Restrict Key and select both Maps JavaScript API and Places API.
+    * Click Save
+    * Select OAuth consent from the APIs and Services menu
+    * Select external user type and complete the app registration process form;
+        * Add user type as External
+        * Add publishing status as Testing
+        * Add app name as Staycation
+        * Add contact email address
+        * Submit and and wait until email is recieved aknowleding that it is verified (3 - 5 days). 
+    * Once verifued the API key can now be used.
 
-* In the GitHub repository, navigate to the Settings tab
-* Select Pages on left side menu
-* Select the Master Branch
-* Click save
-* The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+* API - real time weather. The steps to set up API key are as follows;
+
+    * Set up [open weather map]('https://home.openweathermap.org/) account
+    * Select API keys from sub menu
+    * click Generate button
+    * The API key can now be used.
+
+* Gitpod - The site was deployed to GitHub pages. The steps to deploy are as follows:
+
+    * In the GitHub repository, navigate to the Settings tab
+    * Select Pages on left side menu
+    * Select the Master Branch
+    * Click save
+    * The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
 The live link can be found here - [site link](https://sclarkstone.github.io/milestoneProject2/)
 
@@ -239,7 +271,7 @@ The live link can be found here - [site link](https://sclarkstone.github.io/mile
 
 * [material.io](https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=557a95&secondary.color=33691E]) was used to check accessibility of text colours on background colours. Also used to find complemetary colours. This is where i decided on my 2 shades of blue with white text. As the result was that black was not legible on these shades of blue. Credit to my mentor Akshat for showing me this resource. 
 
-* OpenWeatherMap API. Credit to the provdided walkthroughs at [Fetch the Weather with OpenWeatherMap API and JavaScript](https://bithacker.dev/fetch-weather-openweathermap-api-javascript) and [openweathermap](https://openweathermap.org/current) for how to display the API JSON as desired.  
+* OpenWeatherMap API. Credit to the provdided walkthroughs at [Fetch the Weather with OpenWeatherMap API and JavaScript](https://bithacker.dev/fetch-weather-openweathermap-api-javascript) and [openweathermap](https://openweathermap.org/current) for a guide on different options on how to display the API JSON as desired.  
 
 * [techsini](http://techsini.com/multi-mockup/index.php) was used to generate the multi device website mock up used in the readme file.
 
