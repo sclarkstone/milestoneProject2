@@ -17,7 +17,7 @@ body {
 h1 {
     font-family: Oswald;
     text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
     color: #fff;
     text-align: center;
 }
@@ -30,7 +30,7 @@ h2,
 h3,
 p {
     font-family: Lato;
-    letter-spacing: 4px;
+    letter-spacing: 1px;
 }
 
 main {
@@ -106,41 +106,31 @@ hr {
 
 
 #left-about {
-    padding-top: 10px;
     float: left;
-
     display: flex;
-    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 #right-about {
-    padding-top: 20px;
     float: right;
     text-align: center;
 }
 
 .left-about-heading {
-    width: 100%;
-    line-height: 20px;
-    clear: both;
-    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
 }
 
-.right-about-heading {
-    width: 100%;
-    float: left;
-    line-height: 20px;
-    clear: both;
-    text-align: center;
-}
 
 #city-container {
-
-    padding: 0px;
-    border-style: solid;
-    border-color: #000;
-    border-width: 1px;
-    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
+    
 }
 
 /* --------------------------------- footer */

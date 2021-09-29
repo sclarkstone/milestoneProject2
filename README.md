@@ -197,6 +197,12 @@ After the second review with my mentor some recommendations for improvements wer
 * Map
   * utilise the page more on larger screen sizes. use full width map. 
 
+### Third mentor review
+After the third review with my mentor some recommendations for improvements were made. I carried out these recommendations, they are detailed below.
+* General
+    * reduce letter spacing for h1, h2 and p text.
+    * add a white background colour with box shadow border to city details.
+
 ### Bugs
 
 * The bootstrap toggler menu was not expanding on mobile view. No errors were being given in the console. I fixed this by comparing my code to my previous milestone project and realised that i had missed the CDN link for the bootstrap js file after the fotter on my pages. Once added the menu then functioned as expected.
