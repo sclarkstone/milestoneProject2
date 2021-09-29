@@ -271,7 +271,9 @@ The live link can be found here - [site link](https://sclarkstone.github.io/mile
 
 * [material.io](https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=557a95&secondary.color=33691E]) was used to check accessibility of text colours on background colours. Also used to find complemetary colours. This is where i decided on my 2 shades of blue with white text. As the result was that black was not legible on these shades of blue. Credit to my mentor Akshat for showing me this resource. 
 
-* OpenWeatherMap API. Credit to the provdided walkthroughs at [Fetch the Weather with OpenWeatherMap API and JavaScript](https://bithacker.dev/fetch-weather-openweathermap-api-javascript) and [openweathermap](https://openweathermap.org/current) for a guide on different options on how to display the API JSON as desired.  
+* Google maps platform. Credit to [Google maps]('https://developers.google.com/maps/documentation/javascript/examples/map-simple) for a guide on different options on how to display the map with markers. Map.js, script.js, index.html and map.html files have comments where any code is used as a direct copy and paste. 
+
+* OpenWeatherMap API. Credit to [Fetch the Weather with OpenWeatherMap API and JavaScript](https://bithacker.dev/fetch-weather-openweathermap-api-javascript) and [openweathermap](https://openweathermap.org/current) for a guide on different options on how to display the API JSON as desired. Map.js, script.js, index.html and map.html files have comments where any code is used as a direct copy and paste.
 
 * [techsini](http://techsini.com/multi-mockup/index.php) was used to generate the multi device website mock up used in the readme file.
 
