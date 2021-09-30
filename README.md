@@ -1,10 +1,12 @@
 # STAYCATION
 
-![Mock up screen shots](assets/images/ScreenMockUpsFinal.png)
+The live link can be found here - [site link](https://sclarkstone.github.io/milestoneProject2/)
 
-This site is targeted at people in the UK that are unable to or avoiding travel abroad and looking to remain in the UK to holiday. It offers different methods for users to find a location within the UK to holiday that they would have otherwise perhaps not considered as a holiday destination.  
+This site is targeted at people in the UK that are unable to or avoiding travel abroad and looking to remain in the UK to holiday. It offers different methods for users to find a location within the UK to holiday that they would have otherwise perhaps not considered as a holiday destination.
 
-## User experience design
+![Mock up screen shots](assets/images/ScreenMockUpsFinal.png)  
+
+## User experience (UX)
 
 ### Strategy
 * Defining the goals - From both national news and after speaking with friends and family about thier current needs and things that may be missing from their lives, i soon established a commom theme. Since the last Covid-19 lockdown and with travel restrictions abroad still in place, along with the additional costing of PCR testing on top of holidays abroad it was relatable that people in the UK were now choosing to holiday within the UK. The idea of staycationing has become hugley popular this year within the UK. 
@@ -36,7 +38,7 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 ### Surface
 * Following the C.R.A.P (consistancy, repetition, alignment and proximity) design methodology the pages will all have the same nav bar, footer and color scheme. This will help create a positive user experience. 
 
-## Features
+## Design and features
 
 ### Home page
 
@@ -78,7 +80,6 @@ This site is targeted at people in the UK that are unable to or avoiding travel 
 
 ![Large screen map page](assets/images/mapLargeScreen.png)
 ![Mobile screen map page](assets/images/mapMobileScreen.png)
-
 
 ## Testing
 
@@ -266,8 +267,9 @@ The live link can be found here - [site link](https://sclarkstone.github.io/mile
     * navbar
     * grid layout with rows and columns
     * form controls
+    * responsivness and styling
     
-* [Code institute](https://learn.codeinstitute.net/) course material. Specially the 'Love Running' tutorial gave me the inspiration and guidance for the layout of this site.
+* [Code institute](https://learn.codeinstitute.net/) course material. Specially the 'Putting it all together - Google Maps' tutorial which gave me the inspiration and guidance for the layout Google maps API.
 
 ### Content
 
@@ -277,7 +279,7 @@ The live link can be found here - [site link](https://sclarkstone.github.io/mile
 
 * [material.io](https://material.io/resources/color/#!/?view.left=1&view.right=1&primary.color=557a95&secondary.color=33691E]) was used to check accessibility of text colours on background colours. Also used to find complemetary colours. This is where i decided on my 2 shades of blue with white text. As the result was that black was not legible on these shades of blue. Credit to my mentor Akshat for showing me this resource. 
 
-* Google maps platform. Credit to [Google maps]('https://developers.google.com/maps/documentation/javascript/examples/map-simple) for a guide on different options on how to display the map with markers. Map.js, script.js, index.html and map.html files have comments where any code is used as a direct copy and paste. 
+* Google maps platform. Credit to [Google maps](https://developers.google.com/maps/documentation/javascript/overview) for a guide on different options on how to display the map with markers and the fields availbale to callback. Map.js, script.js, index.html and map.html files have comments where any code is used as a direct copy and paste. 
 
 * OpenWeatherMap API. Credit to [Fetch the Weather with OpenWeatherMap API and JavaScript](https://bithacker.dev/fetch-weather-openweathermap-api-javascript) and [openweathermap](https://openweathermap.org/current) for a guide on different options on how to display the API JSON as desired. Map.js, script.js, index.html and map.html files have comments where any code is used as a direct copy and paste.
 

@@ -169,21 +169,23 @@
 
     ];
 
+    // API key and url for openweathermap
     const OPENWEATHER_API_KEY = 'd92ede264e126d1fde57b9996e67937f';
     const OPENWEATHERMAP_API_URL = `https://api.openweathermap.org/data/2.5/weather`;
 
-
+    // get each city name
     function mapLocationToCityName(locationList) {
        return locationList.map(location => location['name']);
     }
 
+    //get each city type
     function filterLocationsByType(locationList, locationType) {
        return locationList.filter(location => (location.type === locationType));
     }
 
     let cityNames = mapLocationToCityName(locations);
 
-
+    // display city details
     function showCityProps(city) {
        // Show city name
        document.getElementById("city-name").innerHTML = `<h3>${city}</h3`;
@@ -236,7 +238,7 @@
        });
 
     }
-
+    // Credit to https://bithacker.dev/fetch-weather-openweathermap-api-javascript for fetchWeatherInfoForCityAndShow function.
     function fetchWeatherInfoForCityAndShow(cityName) {
        fetch(`${OPENWEATHERMAP_API_URL}?q=${cityName},GB&appid=${OPENWEATHER_API_KEY}`)
           .then(function (resp) {
@@ -254,7 +256,7 @@
 
           });
     }
-
+    // Credit to openweathermap(https://openweathermap.org/current for the drawWeather function and convert Kelvins temp to celcius.
     function drawWeather(d) {
        //convert Kelvins temp to celcius
        var tempInCelsius = Math.round(parseFloat(d.main.temp) - 273.15);

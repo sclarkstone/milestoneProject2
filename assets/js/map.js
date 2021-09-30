@@ -1,4 +1,4 @@
- // 
+ // Credit to Google maps (https://developers.google.com/maps/documentation/javascript/overview) for the initMap function in its entirity. 
  function initMap() {
    var options = {
      zoom: 6,
@@ -7,8 +7,11 @@
        lng: -1.15,
      },
    };
+
+   // Credit to Google maps (https://developers.google.com/maps/documentation/javascript/overview) for the variable map in its entirity. 
    var map = new google.maps.Map(document.getElementById("map"), options);
 
+   //inspration for the addMarkers function from Google maps (https://developers.google.com/maps/documentation/javascript/adding-a-google-map). Rather then reiterating through each marker i utilised my locations array and looped through to get each cities coords.
    locations.forEach(location => {
      addMarker({
        coords: location.coords,
@@ -27,10 +30,12 @@
      marker.addListener("click", function () {
 
        /* city details */
+       // Credit to Google maps (https://developers.google.com/maps/documentation/javascript/places) for the variable placesService in its entirity. 
 
        var placesService = new google.maps.places.PlacesService(
          document.getElementById("cityDetail")
        );
+       // Credit to Google maps (https://developers.google.com/maps/documentation/javascript/place-data-fields) for the variable request in its entirity. 
 
        var request = {
          query: props.city,
@@ -39,6 +44,7 @@
 
        placesService.findPlaceFromQuery(request, callback);
 
+       //inspration for the callback function from Google maps (https://developers.google.com/maps/documentation/javascript/place-data-fields). 
        function callback(results, status) {
          if (status == google.maps.places.PlacesServiceStatus.OK) {
            //clear any error messages
